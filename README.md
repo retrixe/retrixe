@@ -8,10 +8,9 @@ I'm in 11th grade right now, moving into 12th and working on many different proj
 - 🔭 I’m currently working on...
 - 🌱 I’m currently learning OpenGL and getting more familiar with C++.
 - 🎓 I'm currently dealing with preparing for the SAT, looking up colleges and considering the MongoDB certification exam.
-- 📰 I've previously worked on...
-<!-- 💬 Ask me about anything technology related! I'm sure I can help you out especially if I've used what you need help with, or else point you in the right direction.
-- 📫 How to reach me: ...-->
-- ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP. I'm a really fast reader.
+- 📰 I've previously worked on [ez.chat (could restart)](https://github.com/ezchat), [decaffeinater](https://github.com/retrixe/decaffeinater), reconsole and electron-installer-linux.
+- 💬 Ask me about anything I know! I'm sure I can help you out and point you in the right direction, from hardware and software issues to programming problems, especially with languages I know, and otherwise having read about many different technologies.
+- ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP. Also, I like to read.
 - 🐛 I try my best to keep dependencies in my projects to a minimum.
 
 <!--
