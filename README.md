@@ -1,4 +1,18 @@
-### Hi there 👋
+### Hey there o/
+
+I'm in 11th grade right now, moving into 12th and working on many different projects.
+
+- 🎆 I have in-depth experience using JavaScript (TypeScript, Node.js, React (Native) and associated tools like Babel and webpack), Java (not with major frameworks, although I once used Spring), and Kotlin to some extent. Familiar with Python and Golang (a particular favourite of mine). I've used MySQL/MariaDB, MongoDB and Redis and I'm definitely interested in using more like Cassandra, PostgreSQL and Elastisearch in the future. I've worked with a variety of technologies and read about many more, so this is by no means an exhaustive list.
+- 🐧 I'm highly experienced with using Linux and system administration (tools like systemd, package management with apt/rpm, repairing broken systems, livepatch/kpatch, maintenance, system partitioning, MySQL, MariaDB, nginx, etc).
+- 🔍 I'm really good at googling and following xkcd tech support cheat sheet.
+- 🔭 I’m currently working on...
+- 🌱 I’m currently learning OpenGL and getting more familiar with C++.
+- 🎓 I'm currently dealing with preparing for the SAT, looking up colleges and considering the MongoDB certification exam.
+- 📰 I've previously worked on...
+<!-- 💬 Ask me about anything technology related! I'm sure I can help you out especially if I've used what you need help with, or else point you in the right direction.
+- 📫 How to reach me: ...-->
+- ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP. I'm a really fast reader.
+- 🐛 I try my best to keep dependencies in my projects to a minimum.
 
 <!--
 **retrixe/retrixe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
