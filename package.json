@@ -1,0 +1,48 @@
+{
+  "name": "retrixe",
+  "version": "1.0.0-alpha.1",
+  "description": "A custom React site about me with static site generation and client side hydration.",
+  "repository": "https://github.com/retrixe/retrixe",
+  "author": "Ibrahim Ansari <ansari.ibrahim1@gmail.com>",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "dev": "webpack serve --env NODE_ENV=development"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/register": "^7.13.16",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "babel-loader": "^8.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^6.1.1",
+    "core-js": "^3.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "regenerator-runtime": "^0.13.7",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-sources": "^2.2.0"
+  }
+}
