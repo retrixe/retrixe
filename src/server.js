@@ -1,8 +1,12 @@
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import Main from './main'
+import { StaticRouter } from 'react-router-dom'
 
-export default function render (locals) { // TODO: Add favicon and use locals.path.
+export default function render (locals) { // TODO: Add favicon.
+  const markup = ReactDOMServer.renderToString( // We aren't using context rn.
+    <StaticRouter location={locals.path} context={{}}><Main /></StaticRouter>
+  )
   return `
 <html lang="en">
 <head>
@@ -19,6 +23,7 @@ export default function render (locals) { // TODO: Add favicon and use locals.pa
   <meta property='og:description' content='A website about me.' />
   <meta name='Description' content='A website about me.'} />
   <meta name='theme-color' content='#43d98e' />
+  <script>window.path = '${locals.path}'</script>
   <script src='/${locals.assets.runtime.substring(4)}'></script>
   <script src='/${locals.assets.vendors.substring(4)}'></script>
   <script src='/${locals.assets.main.substring(4)}'></script>
@@ -26,7 +31,7 @@ export default function render (locals) { // TODO: Add favicon and use locals.pa
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />
 </head>
 <body>
-  <div id="app">${ReactDOMServer.renderToString(<Main />)}</div>
+  <div id="app">${markup}</div>
 </body>
 </html>
 `
