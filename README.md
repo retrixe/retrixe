@@ -1,6 +1,6 @@
 ### Hey there o/
 
-I'm a student on my gap year before college, with years of experience working on many different projects. Currently I work on open-source projects in my spare time before 
+I'm a student on my gap year before college, with years of experience working on many different projects. Currently, I'm working on multiple open-source projects in my spare time.
 
 - 🎆 I have in-depth experience using JavaScript (TypeScript, Node.js, React, React Native and associated tools like Babel and webpack), Java (not a lot with major frameworks other than a bit of Spring), Kotlin and Golang (a personal favourite). I started learning programming with Python, but I haven't worked with it seriously in a long time. I've used MySQL/MariaDB, MongoDB and Redis and I'm definitely interested in using more like Cassandra, PostgreSQL and Elastisearch in the future. I've worked with a variety of technologies and read about many more, so this is by no means an exhaustive list.
 - 🐧 I'm highly experienced with using Linux and system administration (tools like systemd, package management with apt/rpm, repairing broken systems, livepatch/kpatch, maintenance, system partitioning, MySQL, MariaDB, nginx, etc).

@@ -1,20 +1,28 @@
 module.exports = {
+  root: true,
   env: {
     es6: true,
+    node: true,
     browser: true
   },
-  extends: ['plugin:react/recommended', 'standard', 'standard-jsx', 'standard-react'],
-  plugins: ['react-hooks'],
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
+  extends: [
+    'plugin:@next/next/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'standard-jsx',
+    'standard-react'
+  ],
+  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parserOptions: { project: './tsconfig.json' }
     }
-  },
+  ],
+  ignorePatterns: ['next-env.d.ts'],
   rules: {
-    // React Hooks rules.
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react/react-in-jsx-scope': 'off'
   }
 }
