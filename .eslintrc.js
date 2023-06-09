@@ -3,7 +3,7 @@ module.exports = {
   env: {
     es6: true,
     node: true,
-    browser: true
+    browser: true,
   },
   extends: [
     'plugin:@next/next/recommended',
@@ -11,18 +11,18 @@ module.exports = {
     'plugin:react/recommended',
     'standard-with-typescript',
     'standard-jsx',
-    'standard-react'
+    'standard-react',
+    'plugin:prettier/recommended',
   ],
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
-  parser: '@typescript-eslint/parser',
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      parserOptions: { project: './tsconfig.json' }
-    }
+      parser: '@typescript-eslint/parser',
+      parserOptions: { project: './tsconfig.json' },
+    },
   ],
   ignorePatterns: ['next-env.d.ts'],
   rules: {
-    'react/react-in-jsx-scope': 'off'
-  }
+    'react/react-in-jsx-scope': 'off',
+  },
 }

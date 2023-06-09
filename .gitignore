@@ -6,6 +6,8 @@
 !.yarn/versions
 .pnp.*
 
+out/
+
 # Logs
 logs
 *.log

@@ -1,4 +1,4 @@
-function HomePage (): JSX.Element {
+function HomePage(): JSX.Element {
   return <h1>Hello there!</h1>
 }
 
