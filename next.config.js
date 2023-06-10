@@ -7,6 +7,10 @@ const nextConfig = {
   // trailingSlash: true,
   // Optional: Change the output directory `out` -> `dist`
   // distDir: 'dist',
+  reactStrictMode: true,
+  compiler: {
+    emotion: true,
+  },
 }
 
 module.exports = nextConfig
