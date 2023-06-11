@@ -18,6 +18,7 @@ const App = ({
 
         @media (prefers-color-scheme: dark) {
           :root {
+            --link-color: #fbaed2; /* Color: Lavender pink */
             --background-color: #333;
             --color: #ffffff;
           }
@@ -25,6 +26,7 @@ const App = ({
 
         @media (prefers-color-scheme: light) {
           :root {
+            --link-color: #8f00ff; /* Color: Was Bright pink (#ff007f), now Electric violet */
             --background-color: #eee;
             --color: #000000;
           }

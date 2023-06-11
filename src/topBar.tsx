@@ -14,7 +14,7 @@ const TopBarContainer = styled.div({
 const StyledLink = styled(Link, {
   shouldForwardProp: prop => prop !== 'currentHref' && prop !== 'last',
 })<{ currentHref: string; href: string; last?: boolean }>(props => ({
-  color: props.currentHref === props.href ? '#ff007f' : 'var(--color)',
+  color: props.currentHref === props.href ? 'var(--link-color)' : 'var(--color)',
   textDecoration: props.currentHref === props.href ? 'underline' : 'none',
   marginRight: props.last === true ? '0px' : '8px',
 }))

@@ -21,7 +21,7 @@ const HomePageContent = styled.div({
     boxSizing: 'border-box', // Not really necessary, but the text is a bit misaligned without this.
   },
   '& h3': { fontSize: '1.5em' }, // Copying h2 sizing here, just personal preference.
-  '& a': { color: '#ff007f' },
+  '& a': { color: 'var(--link-color)' },
   '& *': { marginBottom: '1rem' },
 })
 
