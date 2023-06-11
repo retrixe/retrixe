@@ -25,7 +25,6 @@ const HomePageContent = styled.div({
   '& *': { marginBottom: '1rem' },
 })
 
-// TODO: get a favicon for this too tbh also metadata og:image lol
 function HomePage(props: { html: string }): JSX.Element {
   return (
     <>

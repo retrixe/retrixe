@@ -16,6 +16,8 @@ const Meta = ({
     <meta property='og:title' content={title} />
     <meta property='og:url' content={url} />
     <meta property='og:description' content={description} />
+    <meta property='og:image' content='https://github.com/retrixe.png' />
+    <link rel='shortcut icon' type='image/png' href='https://github.com/retrixe.png' />
     <meta name='theme-color' content='#7FFFD4' />
     <meta name='Description' content={description} />
     {noIndex === true && <meta name='robots' content='noindex,nofollow' />}
