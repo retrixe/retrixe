@@ -25,8 +25,8 @@ const App = ({
 
         @media (prefers-color-scheme: light) {
           :root {
-            background-color: #ffffff;
-            color: #000000;
+            --background-color: #eee;
+            --color: #000000;
           }
         }
 
