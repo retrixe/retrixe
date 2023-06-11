@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const TopBarContainer = styled.div({
   display: 'flex',
@@ -18,16 +19,20 @@ const StyledLink = styled(Link, {
   marginRight: props.last === true ? '0px' : '8px',
 }))
 
-const TopBar = ({ currentHref }: { currentHref: string }): JSX.Element => (
-  <TopBarContainer>
-    <h2 css={{ flex: 1 }}>retrixe's site</h2>
-    <StyledLink href='/' currentHref={currentHref}>
-      Home
-    </StyledLink>
-    <StyledLink href='/tictactoe' currentHref={currentHref} last>
-      Tic-Tac-Toe
-    </StyledLink>
-  </TopBarContainer>
-)
+const TopBar = (): JSX.Element => {
+  const router = useRouter()
+
+  return (
+    <TopBarContainer>
+      <h2 css={{ flex: 1 }}>retrixe's site</h2>
+      <StyledLink href='/' currentHref={router.pathname}>
+        Home
+      </StyledLink>
+      <StyledLink href='/tictactoe' currentHref={router.pathname} last>
+        Tic-Tac-Toe
+      </StyledLink>
+    </TopBarContainer>
+  )
+}
 
 export default TopBar

@@ -9,7 +9,7 @@ function HomePage(): JSX.Element {
         description='A stab at implementing tic-tac-toe with only my brain.'
         url='https://retrixe.me/tictactoe'
       />
-      <TopBar currentHref='/' />
+      <TopBar />
       <div css={{ padding: '8px' }}>
         <h4>WIP</h4>
         <ul>

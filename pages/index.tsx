@@ -9,7 +9,7 @@ function HomePage(): JSX.Element {
         description='The home page to my website.'
         url='https://retrixe.me/'
       />
-      <TopBar currentHref='/' />
+      <TopBar />
       <div css={{ padding: '8px' }}>
         <h3>Hey there o/</h3>
         <p>I will make this parse my publicly available GitHub profile sometime today, hopefully</p>
