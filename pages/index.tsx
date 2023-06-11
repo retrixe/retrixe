@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import Meta from '../src/meta'
-import TopBar from '../src/topBar'
+import Meta from '../src/Meta'
+import TopBar from '../src/TopBar'
 
 import { type GetStaticPropsResult } from 'next'
 import { unified } from 'unified'
@@ -25,6 +25,7 @@ const HomePageContent = styled.div({
   '& *': { marginBottom: '1rem' },
 })
 
+// Some shades that could look good: Yellow, cyan, green, blue, purple, pink, violet, magenta
 function HomePage(props: { html: string }): JSX.Element {
   return (
     <>
