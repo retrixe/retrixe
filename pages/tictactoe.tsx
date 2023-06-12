@@ -36,7 +36,6 @@ function TicTacToePage(): JSX.Element {
         <br />
         <h4>TODO</h4>
         <ul>
-          <li>Implement the game UI (multiplayer)</li>
           <li>
             Implement counter+speedrun AI: check if the second player is winning, if they are, then
             counter and block; else look for lines which are closest to completion, rank them (by
