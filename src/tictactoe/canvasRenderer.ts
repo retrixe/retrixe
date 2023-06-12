@@ -1,7 +1,6 @@
 import { type MouseEvent } from 'react'
 
 export const renderGrid = (cx: CanvasRenderingContext2D, width: number, height: number): void => {
-  cx.strokeStyle = 'white'
   cx.lineWidth = 1
   const lines: Array<[number, number]> = [
     [width / 3, 0],
@@ -29,7 +28,6 @@ export const renderCross = (
   const cellSizeX = width / 3
   const cellSizeY = height / 3
 
-  cx.strokeStyle = 'white'
   cx.lineWidth = 2
   cx.beginPath() // Leave 10% margin on each side.
   cx.moveTo(posX + cellSizeX * 0.1, posY + cellSizeY * 0.1)
@@ -50,7 +48,6 @@ export const renderCircle = (
   const posY = y * (height / 3)
   const cellSizeX = width / 3
   const cellSizeY = height / 3
-  cx.strokeStyle = 'white'
   cx.lineWidth = 2
   cx.beginPath()
   const radiusX = (cellSizeX / 2) * 0.8 // Leave 10% margin on each side.

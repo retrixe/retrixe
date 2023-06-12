@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { getCursorPositionOnGrid, renderCircle, renderCross, renderGrid } from './canvasRenderer'
 import { type GameState, Player, checkWinner } from './gameUtils'
+import useDarkMode from '../useDarkMode'
 
 const TicTacToeGameContainer = styled.div({
   width: '100%',
@@ -25,8 +26,23 @@ const TicTacToeGameControls = styled.div({
   marginTop: '1rem',
 })
 
-// TODO: This could be a common global style.
+// TODO: These could be a common global style.
 const TicTacToeGameButton = styled.button({
+  flexGrow: 1,
+  padding: '8px',
+  borderRadius: '8px',
+  border: '1px solid var(--color)',
+  color: 'var(--color)',
+  backgroundColor: 'var(--background-color)',
+  transition: 'background-color 0.2s ease-in-out, color 0.2s ease-in-out',
+  ':hover': {
+    backgroundColor: 'var(--color)',
+    color: 'var(--background-color)',
+  },
+})
+
+const TicTacToeGameSelect = styled.select({
+  marginRight: '1rem',
   flexGrow: 1,
   padding: '8px',
   borderRadius: '8px',
@@ -51,6 +67,7 @@ const TicTacToeGameButton = styled.button({
  */
 
 const TicTacToeGame = (): JSX.Element => {
+  const darkMode = useDarkMode()
   const [gameState, setGameState] = useState<GameState>([
     [null, null, null],
     [null, null, null],
@@ -67,12 +84,13 @@ const TicTacToeGame = (): JSX.Element => {
 
     if (winner) {
       cx.lineWidth = 1
-      cx.fillStyle = 'white'
+      cx.fillStyle = darkMode ? 'white' : 'black'
       cx.font = '48px sans-serif'
       const message = `${winner === Player.Cross ? 'X' : 'O'} wins!`
       const { width: textWidth } = cx.measureText(message)
       cx.fillText(message, (width - textWidth) / 2, (height + 24) / 2) // 48 / 2 = 24
     } else {
+      cx.strokeStyle = darkMode ? 'white' : 'black'
       renderGrid(cx, width, height)
 
       for (let y = 0; y < gameState.length; y++) {
@@ -90,7 +108,17 @@ const TicTacToeGame = (): JSX.Element => {
     return () => {
       cx.clearRect(0, 0, width, height)
     }
-  }, [gameState, winner])
+  }, [gameState, winner, darkMode])
+
+  const handleReset = (): void => {
+    setGameState([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ])
+    setTurn(Player.Cross)
+    setWinner(null)
+  }
 
   return (
     <TicTacToeGameContainer>
@@ -123,19 +151,10 @@ const TicTacToeGame = (): JSX.Element => {
           }}
         />
         <TicTacToeGameControls>
-          <TicTacToeGameButton
-            onClick={() => {
-              setGameState([
-                [null, null, null],
-                [null, null, null],
-                [null, null, null],
-              ])
-              setTurn(Player.Cross)
-              setWinner(null)
-            }}
-          >
-            Reset
-          </TicTacToeGameButton>
+          <TicTacToeGameSelect>
+            <option>Multiplayer</option>
+          </TicTacToeGameSelect>
+          <TicTacToeGameButton onClick={handleReset}>Reset</TicTacToeGameButton>
         </TicTacToeGameControls>
       </div>
     </TicTacToeGameContainer>
