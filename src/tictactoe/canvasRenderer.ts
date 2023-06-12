@@ -1,3 +1,5 @@
+import { type MouseEvent } from 'react'
+
 export const renderGrid = (cx: CanvasRenderingContext2D, width: number, height: number): void => {
   cx.strokeStyle = 'white'
   cx.lineWidth = 1
@@ -15,22 +17,65 @@ export const renderGrid = (cx: CanvasRenderingContext2D, width: number, height: 
   cx.stroke()
 }
 
-// TODO: dynamic height/width, 10 padding may not be enough? instead calculate 10% and take in height/width as args
-export const renderCross = (cx: CanvasRenderingContext2D, x: number, y: number): void => {
+export const renderCross = (
+  cx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  width: number,
+  height: number
+): void => {
+  const posX = x * (width / 3)
+  const posY = y * (height / 3)
+  const cellSizeX = width / 3
+  const cellSizeY = height / 3
+
   cx.strokeStyle = 'white'
   cx.lineWidth = 2
-  cx.beginPath()
-  cx.moveTo(x + 10, y + 10)
-  cx.lineTo(x + 90, y + 90)
-  cx.moveTo(x + 90, y + 10)
-  cx.lineTo(x + 10, y + 90)
+  cx.beginPath() // Leave 10% margin on each side.
+  cx.moveTo(posX + cellSizeX * 0.1, posY + cellSizeY * 0.1)
+  cx.lineTo(posX + cellSizeX * 0.9, posY + cellSizeY * 0.9)
+  cx.moveTo(posX + cellSizeX * 0.9, posY + cellSizeY * 0.1)
+  cx.lineTo(posX + cellSizeX * 0.1, posY + cellSizeY * 0.9)
   cx.stroke()
 }
 
-export const renderCircle = (cx: CanvasRenderingContext2D, x: number, y: number): void => {
+export const renderCircle = (
+  cx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  width: number,
+  height: number
+): void => {
+  const posX = x * (width / 3)
+  const posY = y * (height / 3)
+  const cellSizeX = width / 3
+  const cellSizeY = height / 3
   cx.strokeStyle = 'white'
   cx.lineWidth = 2
   cx.beginPath()
-  cx.arc(x + 50, y + 50, 40, 0, 2 * Math.PI)
+  const radiusX = (cellSizeX / 2) * 0.8 // Leave 10% margin on each side.
+  const radiusY = (cellSizeY / 2) * 0.8 // Leave 10% margin on each side.
+  cx.ellipse(posX + cellSizeX / 2, posY + cellSizeY / 2, radiusX, radiusY, 0, 0, 2 * Math.PI)
   cx.stroke()
+}
+
+export const getCursorPositionOnCanvas = (
+  event: MouseEvent<HTMLCanvasElement>
+): [number, number] => {
+  const canvasBounds = event.currentTarget.getBoundingClientRect()
+  return [event.clientX - canvasBounds.left, event.clientY - canvasBounds.top]
+}
+
+export const getCursorPositionOnGrid = (event: MouseEvent<HTMLCanvasElement>): [number, number] => {
+  const [x, y] = getCursorPositionOnCanvas(event)
+  const canvasBounds = event.currentTarget.getBoundingClientRect()
+  const pos: [number, number] = [
+    Math.floor((x / canvasBounds.width) * 3),
+    Math.floor((y / canvasBounds.height) * 3),
+  ]
+  if (pos[0] < 0 || pos[0] > 2 || pos[1] < 0 || pos[1] > 2) {
+    return [-1, -1]
+  } else {
+    return pos
+  }
 }

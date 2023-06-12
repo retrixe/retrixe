@@ -11,7 +11,6 @@ const TicTacToePageContent = styled.div({
     width: '900px',
     marginTop: '1rem',
     alignSelf: 'center',
-    boxSizing: 'border-box', // Not really necessary, but the text is a bit misaligned without this.
   },
 })
 
