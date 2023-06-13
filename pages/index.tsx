@@ -32,7 +32,7 @@ function HomePage(props: { html: string }): JSX.Element {
       <Meta
         title={"Home - retrixe's site"}
         description='The home page to my website.'
-        url='https://retrixe.me/'
+        url='https://retrixe.xyz/'
       />
       <TopBar />
       <HomePageContent dangerouslySetInnerHTML={{ __html: props.html }} />

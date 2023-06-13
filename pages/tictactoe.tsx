@@ -25,7 +25,7 @@ function TicTacToePage(): JSX.Element {
       <Meta
         title={"Tic-Tac-Toe - retrixe's site"}
         description='A stab at implementing tic-tac-toe with only my brain.'
-        url='https://retrixe.me/tictactoe'
+        url='https://retrixe.xyz/tictactoe'
       />
       <TopBar />
       <TicTacToePageContent>
