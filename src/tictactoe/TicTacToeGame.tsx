@@ -75,6 +75,7 @@ const TicTacToeGame = (): JSX.Element => {
   ])
   const [turn, setTurn] = useState(Player.Cross)
   const [winner, setWinner] = useState<Player | null>(null)
+  const [mode, setMode] = useState<'multiplayer' | 'counter+speedrun' | 'minmax'>('multiplayer')
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useLayoutEffect(() => {
@@ -151,8 +152,15 @@ const TicTacToeGame = (): JSX.Element => {
           }}
         />
         <TicTacToeGameControls>
-          <TicTacToeGameSelect>
-            <option>Multiplayer</option>
+          <TicTacToeGameSelect
+            value={mode}
+            onChange={e => {
+              setMode(e.target.value as typeof mode)
+            }}
+          >
+            <option value='multiplayer'>Multiplayer</option>
+            <option value='counter+speedrun'>Counter+Speedrun</option>
+            <option value='minmax'>Minmax</option>
           </TicTacToeGameSelect>
           <TicTacToeGameButton onClick={handleReset}>Reset</TicTacToeGameButton>
         </TicTacToeGameControls>
