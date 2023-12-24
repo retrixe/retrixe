@@ -21,7 +21,7 @@ export const renderCross = (
   x: number,
   y: number,
   width: number,
-  height: number
+  height: number,
 ): void => {
   const posX = x * (width / 3)
   const posY = y * (height / 3)
@@ -42,7 +42,7 @@ export const renderCircle = (
   x: number,
   y: number,
   width: number,
-  height: number
+  height: number,
 ): void => {
   const posX = x * (width / 3)
   const posY = y * (height / 3)
@@ -57,7 +57,7 @@ export const renderCircle = (
 }
 
 export const getCursorPositionOnCanvas = (
-  event: MouseEvent<HTMLCanvasElement>
+  event: MouseEvent<HTMLCanvasElement>,
 ): [number, number] => {
   const canvasBounds = event.currentTarget.getBoundingClientRect()
   return [event.clientX - canvasBounds.left, event.clientY - canvasBounds.top]

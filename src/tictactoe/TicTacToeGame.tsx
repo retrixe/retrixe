@@ -83,7 +83,7 @@ const TicTacToeGame = (): JSX.Element => {
     if (cx == null) return
     const { width, height } = canvasRef.current! // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
-    if (winner) {
+    if (winner != null) {
       cx.lineWidth = 1
       cx.fillStyle = darkMode ? 'white' : 'black'
       cx.font = '48px sans-serif'
@@ -141,7 +141,7 @@ const TicTacToeGame = (): JSX.Element => {
             ]
             if (newGameState[y][x] !== null) {
               console.error(
-                `Cell at ${x} ${y} is already occupied by ${newGameState[y][x] as number}!`
+                `Cell at ${x} ${y} is already occupied by ${newGameState[y][x] as number}!`,
               )
             } else {
               newGameState[y][x] = turn

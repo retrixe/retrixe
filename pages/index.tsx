@@ -51,7 +51,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<{ html: str
           .use(remarkRehype)
           .use(rehypePresetMinify)
           .use(rehypeStringify)
-          .process(await read('README.md'))
+          .process(await read('README.md')),
       ),
     },
   }
