@@ -37,8 +37,8 @@ const TopBar = (): JSX.Element => {
         Home
       </StyledLink>
       <Divider />
-      <StyledLink href='/experiments/tictactoe' currentHref={router.pathname} last>
-        Tic-Tac-Toe
+      <StyledLink href='/experiments' currentHref={router.pathname} last>
+        Experiments
       </StyledLink>
     </TopBarContainer>
   )

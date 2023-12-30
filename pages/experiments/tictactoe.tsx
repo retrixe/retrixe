@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import CentredContent from '../../src/CentredContent'
 import Meta from '../../src/Meta'
 import TopBar from '../../src/TopBar'
-import TicTacToeGame from '../../src/tictactoe/TicTacToeGame'
+import TicTacToeGame from '../../src/experiments/tictactoe/TicTacToeGame'
 
 function TicTacToePage(): JSX.Element {
   const [hydrated, setHydrated] = useState(false)

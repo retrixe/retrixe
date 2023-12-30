@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { getCursorPositionOnGrid, renderCircle, renderCross, renderGrid } from './canvasRenderer'
 import { type GameState, Player, checkWinner } from './gameUtils'
-import useDarkMode from '../useDarkMode'
+import useDarkMode from '../../useDarkMode'
 
 const TicTacToeGameContainer = styled.div({
   width: '100%',
