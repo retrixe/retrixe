@@ -1,18 +1,8 @@
 import { useEffect, useState } from 'react'
-import styled from '@emotion/styled'
-import Meta from '../src/Meta'
-import TopBar from '../src/TopBar'
-import TicTacToeGame from '../src/tictactoe/TicTacToeGame'
-
-const TicTacToePageContent = styled.div({
-  padding: '8px',
-  // This is higher than the width, else it looks weird with the extra margin on top. 968px is good.
-  '@media (min-width: 968px)': {
-    width: '900px',
-    marginTop: '1rem',
-    alignSelf: 'center',
-  },
-})
+import CentredContent from '../../src/CentredContent'
+import Meta from '../../src/Meta'
+import TopBar from '../../src/TopBar'
+import TicTacToeGame from '../../src/tictactoe/TicTacToeGame'
 
 function TicTacToePage(): JSX.Element {
   const [hydrated, setHydrated] = useState(false)
@@ -23,12 +13,12 @@ function TicTacToePage(): JSX.Element {
   return (
     <>
       <Meta
-        title={"Tic-Tac-Toe - retrixe's site"}
+        title={"Tic-Tac-Toe - Experiments - retrixe's site"}
         description='A stab at implementing tic-tac-toe with only my brain.'
-        url='https://retrixe.xyz/tictactoe'
+        url='https://retrixe.xyz/experiments/tictactoe'
       />
       <TopBar />
-      <TicTacToePageContent>
+      <CentredContent>
         <br />
         {hydrated && <TicTacToeGame />}
         <br />
@@ -48,7 +38,7 @@ function TicTacToePage(): JSX.Element {
             test all moves, rank each possible move with the best likelihood to win
           </li>
         </ul>
-      </TicTacToePageContent>
+      </CentredContent>
     </>
   )
 }

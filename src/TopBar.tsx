@@ -15,9 +15,16 @@ const StyledLink = styled(Link, {
   shouldForwardProp: prop => prop !== 'currentHref' && prop !== 'last',
 })<{ currentHref: string; href: string; last?: boolean }>(props => ({
   color: props.currentHref === props.href ? 'var(--link-color)' : 'var(--color)',
-  textDecoration: props.currentHref === props.href ? 'underline' : 'none',
+  fontWeight: props.currentHref === props.href ? 'bold' : 'normal',
+  textDecoration: /* props.currentHref !== props.href ? 'underline' : */ 'none',
   marginRight: props.last === true ? '0px' : '8px',
 }))
+
+const Divider = styled.div({
+  borderLeft: '1px solid var(--color)',
+  height: '28px',
+  marginRight: '8px',
+})
 
 const TopBar = (): JSX.Element => {
   const router = useRouter()
@@ -28,7 +35,8 @@ const TopBar = (): JSX.Element => {
       <StyledLink href='/' currentHref={router.pathname}>
         Home
       </StyledLink>
-      <StyledLink href='/tictactoe' currentHref={router.pathname} last>
+      <Divider />
+      <StyledLink href='/experiments/tictactoe' currentHref={router.pathname} last>
         Tic-Tac-Toe
       </StyledLink>
     </TopBarContainer>
