@@ -8,7 +8,8 @@ const TopBarContainer = styled.div({
   width: '100%',
   padding: '8px',
   boxSizing: 'border-box',
-  borderBottom: '1px solid var(--color)',
+  borderBottom: '1px solid var(--divider-color)',
+  marginBottom: '0.8rem',
 })
 
 const StyledLink = styled(Link, {
@@ -21,7 +22,7 @@ const StyledLink = styled(Link, {
 }))
 
 const Divider = styled.div({
-  borderLeft: '1px solid var(--color)',
+  borderLeft: '1px solid var(--divider-color)',
   height: '28px',
   marginRight: '8px',
 })
