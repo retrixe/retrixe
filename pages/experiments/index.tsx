@@ -1,7 +1,7 @@
-import CentredContent from '../../src/CentredContent'
-import Meta from '../../src/Meta'
-import TopBar from '../../src/TopBar'
-import SideCard from '../../src/experiments/SideCard'
+import CentredContent from '../../src/layout/CentredContent'
+import Meta from '../../src/layout/Meta'
+import TopBar from '../../src/layout/TopBar'
+import SideCard from '../../src/components/SideCard'
 
 function ExperimentsPage(): JSX.Element {
   return (

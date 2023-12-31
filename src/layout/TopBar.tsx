@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import githubMark from '../public/github-mark.svg'
+import githubMark from '../../public/github-mark.svg'
 
 const TopBarContainer = styled.div({
   display: 'flex',

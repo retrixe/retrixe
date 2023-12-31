@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
-import Meta from '../src/Meta'
-import TopBar from '../src/TopBar'
-import CentredContent from '../src/CentredContent'
+import Meta from '../src/layout/Meta'
+import TopBar from '../src/layout/TopBar'
+import CentredContent from '../src/layout/CentredContent'
 
 import { type GetStaticPropsResult } from 'next'
 import { unified } from 'unified'

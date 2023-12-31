@@ -2,7 +2,9 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { getCursorPositionOnGrid, renderCircle, renderCross, renderGrid } from './canvasRenderer'
 import { type GameState, Player, checkWinner } from './gameUtils'
-import useDarkMode from '../../useDarkMode'
+import useDarkMode from '../../utils/useDarkMode'
+import Button from '../../components/Button'
+import Select from '../../components/Select'
 
 const TicTacToeGameContainer = styled.div({
   width: '100%',
@@ -25,46 +27,6 @@ const TicTacToeGameControls = styled.div({
   width: '100%',
   marginTop: '1rem',
 })
-
-// TODO: These could be a common global style.
-const TicTacToeGameButton = styled.button({
-  flexGrow: 1,
-  padding: '8px',
-  borderRadius: '8px',
-  border: '1px solid var(--color)',
-  color: 'var(--color)',
-  backgroundColor: 'var(--background-color)',
-  transition: 'background-color 0.2s ease-in-out, color 0.2s ease-in-out',
-  ':hover': {
-    backgroundColor: 'var(--color)',
-    color: 'var(--background-color)',
-  },
-})
-
-const TicTacToeGameSelect = styled.select({
-  marginRight: '1rem',
-  flexGrow: 1,
-  padding: '8px',
-  borderRadius: '8px',
-  border: '1px solid var(--color)',
-  color: 'var(--color)',
-  backgroundColor: 'var(--background-color)',
-  transition: 'background-color 0.2s ease-in-out, color 0.2s ease-in-out',
-  ':hover': {
-    backgroundColor: 'var(--color)',
-    color: 'var(--background-color)',
-  },
-})
-
-/* TODO:
- * Implement counter+speedrun AI: check if the second player is winning, if they are, then counter
- * and block; else look for lines which are closest to completion, rank them (by how much is left to
- * complete them, but perhaps other criteria to make it smarter like a move which the player would
- * be unable to counter), and then try completing the most eligible one
- *
- * a more advanced ai could replace the else strategy with ahead prediction like chess AIs, test all
- * moves, rank each possible move with the best likelihood to win
- */
 
 const TicTacToeGame = (): JSX.Element => {
   const darkMode = useDarkMode()
@@ -152,7 +114,7 @@ const TicTacToeGame = (): JSX.Element => {
           }}
         />
         <TicTacToeGameControls>
-          <TicTacToeGameSelect
+          <Select
             value={mode}
             onChange={e => {
               setMode(e.target.value as typeof mode)
@@ -161,8 +123,8 @@ const TicTacToeGame = (): JSX.Element => {
             <option value='multiplayer'>Multiplayer</option>
             <option value='counter+speedrun'>Counter+Speedrun</option>
             <option value='minmax'>Minmax</option>
-          </TicTacToeGameSelect>
-          <TicTacToeGameButton onClick={handleReset}>Reset</TicTacToeGameButton>
+          </Select>
+          <Button onClick={handleReset}>Reset</Button>
         </TicTacToeGameControls>
       </div>
     </TicTacToeGameContainer>

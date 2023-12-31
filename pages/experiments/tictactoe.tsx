@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import CentredContent from '../../src/CentredContent'
-import Meta from '../../src/Meta'
-import TopBar from '../../src/TopBar'
+import CentredContent from '../../src/layout/CentredContent'
+import Meta from '../../src/layout/Meta'
+import TopBar from '../../src/layout/TopBar'
 import TicTacToeGame from '../../src/experiments/tictactoe/TicTacToeGame'
 
 function TicTacToePage(): JSX.Element {
