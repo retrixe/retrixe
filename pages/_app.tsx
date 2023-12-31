@@ -28,6 +28,7 @@ const App = ({
 
         @media (prefers-color-scheme: dark) {
           :root {
+            color-scheme: dark;
             --link-color: #40e0d0; /* Color: Was Heliotrope (#df73ff), now Turquoise */
             --background-color: #111; /* Color: Was #333 */
             --color: #ffffff;

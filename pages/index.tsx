@@ -13,9 +13,6 @@ import rehypeStringify from 'rehype-stringify'
 import { read } from 'to-vfile'
 
 const HomePageContent = styled(CentredContent)({
-  '@media (min-width: 968px)': {
-    // boxSizing: 'border-box', // Not really necessary, but the text is a bit misaligned without this.
-  },
   '& h3': { fontSize: '1.5em' }, // Copying h2 sizing here, just personal preference.
   '& a': { color: 'var(--link-color)' },
   '& *': { marginBottom: '1rem' },

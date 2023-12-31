@@ -4,8 +4,7 @@ const useDarkMode = (): boolean => {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (typeof window === 'undefined' || !window.matchMedia) return
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     setDarkMode(mediaQuery.matches)
