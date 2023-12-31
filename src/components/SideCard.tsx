@@ -9,12 +9,18 @@ const SideCardContainer = styled.div<{ openOn: 'left' | 'right' }>(props => {
     [`border${openOn}`]: '0px',
     [`borderTop${openOn}Radius`]: '0px',
     [`borderBottom${openOn}Radius`]: '0px',
-    padding: '1rem',
+    padding: '2rem',
     display: 'flex',
     width: 'fit-content',
+    marginBottom: '2rem',
+    flexWrap: 'wrap',
   }
 })
-
+const SideCardImageLeft = styled.div({ marginLeft: '2rem' })
+const SideCardImageRight = styled.div({ marginRight: '2rem' })
+const FlexDiv = styled.div({ display: 'flex' })
+const FlexSpace = styled.div({ flex: 1 })
+const StyledHeader = styled.h1({ marginBottom: '1rem' })
 const StyledLink = styled(Link)({ color: 'var(--link-color)' })
 
 const SideCard = (props: {
@@ -24,22 +30,31 @@ const SideCard = (props: {
   href?: string
   openOn: 'left' | 'right'
 }): JSX.Element => {
-  // TODO: variable alignment to left or the right
-  // TODO: the border should extend to the edge of the display
+  // FIXME: the border should extend to the edge of the display and fade
+  // FIXME: the cards should animate into view
+  // FIXME: this isn't really responsive
   return (
-    <SideCardContainer openOn={props.openOn}>
-      <div>
-        <h1>
-          {props.href !== undefined ? (
-            <StyledLink href={props.href}>{props.title}</StyledLink>
-          ) : (
-            props.title
-          )}
-        </h1>
-        <p>{props.description}</p>
-      </div>
-      {props.image}
-    </SideCardContainer>
+    <FlexDiv>
+      {props.openOn === 'right' ? <FlexSpace /> : null}
+      <SideCardContainer openOn={props.openOn}>
+        {props.image != null && props.openOn === 'right' ? (
+          <SideCardImageRight>{props.image}</SideCardImageRight>
+        ) : null}
+        <div>
+          <StyledHeader>
+            {props.href !== undefined ? (
+              <StyledLink href={props.href}>{props.title}</StyledLink>
+            ) : (
+              props.title
+            )}
+          </StyledHeader>
+          <p>{props.description}</p>
+        </div>
+        {props.image != null && props.openOn === 'left' ? (
+          <SideCardImageLeft>{props.image}</SideCardImageLeft>
+        ) : null}
+      </SideCardContainer>
+    </FlexDiv>
   )
 }
 

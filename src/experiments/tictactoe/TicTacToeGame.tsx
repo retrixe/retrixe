@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { type MouseEventHandler, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { getCursorPositionOnGrid, renderCircle, renderCross, renderGrid } from './canvasRenderer'
 import { type GameState, Player, checkWinner } from './gameUtils'
@@ -14,8 +14,6 @@ const TicTacToeGameContainer = styled.div({
 })
 
 const TicTacToeGameCanvas = styled.canvas({
-  // width: '300px',
-  // height: '300px',
   border: '1px solid var(--color)',
   borderRadius: '8px',
 })
@@ -40,7 +38,7 @@ const TicTacToeGame = (): JSX.Element => {
   const [mode, setMode] = useState<'multiplayer' | 'counter+speedrun' | 'minmax'>('multiplayer')
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  useLayoutEffect(() => {
+  ;(typeof window !== 'undefined' ? useLayoutEffect : useEffect)(() => {
     const cx = canvasRef.current?.getContext('2d')
     if (cx == null) return
     const { width, height } = canvasRef.current! // eslint-disable-line @typescript-eslint/no-non-null-assertion
@@ -56,16 +54,15 @@ const TicTacToeGame = (): JSX.Element => {
       cx.strokeStyle = darkMode ? 'white' : 'black'
       renderGrid(cx, width, height)
 
-      for (let y = 0; y < gameState.length; y++) {
-        for (let x = 0; x < gameState[y].length; x++) {
-          const cell = gameState[y][x]
+      gameState.forEach((row, y) => {
+        row.forEach((cell, x) => {
           if (cell === Player.Cross) {
             renderCross(cx, x, y, width, height)
           } else if (cell === Player.Circle) {
             renderCircle(cx, x, y, width, height)
           }
-        }
-      }
+        })
+      })
     }
 
     return () => {
@@ -83,36 +80,27 @@ const TicTacToeGame = (): JSX.Element => {
     setWinner(null)
   }
 
+  const handleClick: MouseEventHandler<HTMLCanvasElement> = e => {
+    const [x, y] = getCursorPositionOnGrid(e)
+    if (x === -1 || y === -1) {
+      console.error('Failed to get cursor position on grid!')
+      return
+    }
+    const newGameState: GameState = [[...gameState[0]], [...gameState[1]], [...gameState[2]]]
+    if (newGameState[y][x] !== null) {
+      console.error(`Cell at ${x} ${y} is already occupied by ${newGameState[y][x] as number}!`)
+    } else {
+      newGameState[y][x] = turn
+      setGameState(newGameState)
+      setTurn(turn === Player.Cross ? Player.Circle : Player.Cross)
+      setWinner(checkWinner(newGameState))
+    }
+  }
+
   return (
     <TicTacToeGameContainer>
       <div>
-        <TicTacToeGameCanvas
-          ref={canvasRef}
-          height='300'
-          width='300'
-          onClick={e => {
-            const [x, y] = getCursorPositionOnGrid(e)
-            if (x === -1 || y === -1) {
-              console.error('Failed to get cursor position on grid!')
-              return
-            }
-            const newGameState: GameState = [
-              [...gameState[0]],
-              [...gameState[1]],
-              [...gameState[2]],
-            ]
-            if (newGameState[y][x] !== null) {
-              console.error(
-                `Cell at ${x} ${y} is already occupied by ${newGameState[y][x] as number}!`,
-              )
-            } else {
-              newGameState[y][x] = turn
-              setGameState(newGameState)
-              setTurn(turn === Player.Cross ? Player.Circle : Player.Cross)
-              setWinner(checkWinner(newGameState))
-            }
-          }}
-        />
+        <TicTacToeGameCanvas ref={canvasRef} height='300' width='300' onClick={handleClick} />
         <TicTacToeGameControls>
           <Select
             value={mode}
