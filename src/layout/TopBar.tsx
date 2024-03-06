@@ -8,12 +8,16 @@ import githubMark from '../../public/github-mark.svg'
 const TopBarContainer = styled.div({
   display: 'flex',
   alignItems: 'center',
+  position: 'fixed',
   width: '100%',
   padding: '8px',
   boxSizing: 'border-box',
   borderBottom: '1px solid var(--divider-color)',
   marginBottom: '0.8rem',
+  backdropFilter: 'blur(8px)',
 })
+
+const TopBarSpacer = styled.div({ height: '4rem' })
 
 const StyledLink = styled(Link, {
   shouldForwardProp: prop => prop !== 'currentHref' && prop !== 'last',
@@ -39,22 +43,30 @@ const TopBar = (): JSX.Element => {
   const router = useRouter()
 
   return (
-    <TopBarContainer>
-      <h2 css={{ flex: 1 }}>
-        <UnstyledLink href='/'>retrixe's site</UnstyledLink>
-      </h2>
-      <StyledLink href='/' currentHref={router.pathname}>
-        Home
-      </StyledLink>
-      <Divider />
-      <StyledLink href='/experiments' currentHref={router.pathname}>
-        Experiments
-      </StyledLink>
-      <Divider />
-      <StyledLink href='https://github.com/retrixe' target='_blank' rel='noopener noreferrer' last>
-        <GitHubImage src={githubMark} alt='GitHub' height={28} width={28} />
-      </StyledLink>
-    </TopBarContainer>
+    <>
+      <TopBarContainer>
+        <h2 css={{ flex: 1 }}>
+          <UnstyledLink href='/'>retrixe's site</UnstyledLink>
+        </h2>
+        <StyledLink href='/' currentHref={router.pathname}>
+          Home
+        </StyledLink>
+        <Divider />
+        <StyledLink href='/experiments' currentHref={router.pathname}>
+          Experiments
+        </StyledLink>
+        <Divider />
+        <StyledLink
+          href='https://github.com/retrixe'
+          target='_blank'
+          rel='noopener noreferrer'
+          last
+        >
+          <GitHubImage src={githubMark} alt='GitHub' height={28} width={28} />
+        </StyledLink>
+      </TopBarContainer>
+      <TopBarSpacer />
+    </>
   )
 }
 

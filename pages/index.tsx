@@ -18,7 +18,6 @@ const HomePageContent = styled(CentredContent)({
   '& *': { marginBottom: '1rem' },
 })
 
-// Some shades that could look good: Yellow, cyan, green, blue, purple, pink, violet, magenta
 function HomePage(props: { html: string }): JSX.Element {
   return (
     <>

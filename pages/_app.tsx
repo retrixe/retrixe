@@ -14,6 +14,7 @@ const inter = Inter({
   // weight: ['100', '300', '400', '700', '900'], // Lato
   // weight: ['300', '400', '700'], // Oxygen
 })
+// Some shades that could look good: Yellow, cyan, green, blue, purple, pink, violet, magenta
 
 const App = ({
   Component,
