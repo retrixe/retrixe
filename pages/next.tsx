@@ -1,5 +1,28 @@
-### Hey there o/
+import Meta from '../src/layout/Meta'
+import TopBar from '../src/layout/TopBar'
+import CentredContent from '../src/layout/CentredContent'
+import TypedContent from '../src/components/TypedContent'
 
+function HomePage(): JSX.Element {
+  return (
+    <>
+      <Meta
+        title={"Home - retrixe's site"}
+        description='The home page to my website.'
+        url='https://retrixe.xyz/'
+      />
+      <TopBar />
+      <CentredContent>
+        <TypedContent component='h1' content={`Hey, I'm ibu o/`} speed={100} />
+        <br />
+      </CentredContent>
+    </>
+  )
+}
+
+export default HomePage
+
+/* TODO
 I'm a student at MIT World Peace University, with years of experience working on many different projects. Formerly worked full-time at Apconic Software Pvt Ltd for a year, and in my spare time, I work on multiple open-source projects.
 
 - 🎆 I have in-depth experience using JavaScript (TypeScript, Node.js, React, React Native and associated tools like Babel and webpack), Java, Kotlin and Golang (a personal favourite). I started learning programming with Python, but I haven't worked with it seriously in a long time. I've used databases like MySQL/MariaDB, MongoDB, PostgreSQL and Redis and I'm interested in using more like Cassandra and Elastisearch in the future. I've worked with a variety of technologies and read about many more, so this is by no means an exhaustive list.
@@ -21,18 +44,4 @@ I'm a student at MIT World Peace University, with years of experience working on
 - 📫 How to reach me: Likely my committer address :^) I'm [@retrixe](https://github.com/retrixe) on GitHub, and I have a Discord server for my projects [here](https://discord.gg/MFSJa9TpPS).
 - ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP.
 - 🐛 Good tip: Minimise external dependencies in your projects.
-
-<!--
-**retrixe/retrixe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+*/
