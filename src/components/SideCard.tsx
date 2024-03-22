@@ -12,6 +12,7 @@ const SideCardContainer = styled.div<{ openOn: 'left' | 'right' }>(props => {
     padding: '2rem',
     display: 'flex',
     width: 'fit-content',
+    minWidth: '60%',
     marginBottom: '2rem',
     flexWrap: 'wrap',
   }

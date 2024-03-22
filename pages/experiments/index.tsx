@@ -19,6 +19,12 @@ function ExperimentsPage(): JSX.Element {
           href='/experiments/tictactoe'
           description='A stab at implementing tic-tac-toe with only my brain.'
         />
+        <SideCard
+          openOn='right'
+          title='HomePage V2'
+          href='/experiments/next'
+          description='New version of the homepage.'
+        />
         <p>Note: This page is experimental and still being designed.</p>
       </CentredContent>
     </>

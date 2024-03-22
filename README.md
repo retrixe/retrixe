@@ -18,7 +18,7 @@ I'm a student at MIT World Peace University, with years of experience working on
 - 🎓 I'm currently studying a bachelor's degree in Computer Science at MIT World Peace University.
 - 📰 I've previously worked on [ez.chat (could restart in free time)](https://github.com/ezchat), [Area51](https://github.com/retrixe/area51) (serve files over HTTP), [decaffeinater](https://github.com/retrixe/decaffeinater), reconsole and electron-installer-linux.
 - 💬 Ask me about anything I know! I'm sure I can help you out and point you in the right direction, from hardware and software issues to programming problems, especially with languages I know, and otherwise having read about many different technologies.
-- 📫 How to reach me: Likely my committer address :^) I'm [@retrixe](https://github.com/retrixe) on GitHub, and I have a Discord server for my projects [here](https://discord.gg/MFSJa9TpPS).
+- 📫 How to reach me: [contact@retrixe.xyz](mailto:contact@retrixe.xyz) :^) I'm [@retrixe](https://github.com/retrixe) on GitHub, and I have a Discord server for my projects [here](https://discord.gg/MFSJa9TpPS).
 - ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP.
 - 🐛 Good tip: Minimise external dependencies in your projects.
 

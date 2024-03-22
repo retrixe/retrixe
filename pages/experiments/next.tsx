@@ -1,9 +1,14 @@
-import Meta from '../src/layout/Meta'
-import TopBar from '../src/layout/TopBar'
-import CentredContent from '../src/layout/CentredContent'
-import TypedContent from '../src/components/TypedContent'
+import Meta from '../../src/layout/Meta'
+import TopBar from '../../src/layout/TopBar'
+import CentredContent from '../../src/layout/CentredContent'
+import TypedContent from '../../src/components/TypedContent'
+import { useState } from 'react'
 
 function HomePage(): JSX.Element {
+  // FIXME: Work without JavaScript
+  // FIXME: This is kinda ugly, to be quite honest
+  const [titleRendered, setTitleRendered] = useState(false)
+
   return (
     <>
       <Meta
@@ -13,8 +18,52 @@ function HomePage(): JSX.Element {
       />
       <TopBar />
       <CentredContent>
-        <TypedContent component='h1' content={`Hey, I'm ibu o/`} speed={100} />
+        <TypedContent
+          component='h1'
+          content={`Hey, I'm ibu o/`}
+          speed={100}
+          onFinish={() => {
+            setTitleRendered(true)
+          }}
+        />
         <br />
+        {titleRendered && (
+          <ul>
+            <li>
+              {/* FIXME: could we dynamically calculate this?... */}
+              <TypedContent component='h2' content='✨ Age: 20' speed={25} />
+            </li>
+            <br />
+            <li>
+              {/* FIXME: this could be better... */}
+              <TypedContent
+                component='h2'
+                content='🎆 Experience: Java, Kotlin, Golang, Rust, Python, TypeScript, and more'
+                speed={25}
+              />
+            </li>
+            <br />
+            <li>
+              <TypedContent
+                component='h2'
+                content={`🎓 Pursuing bachelor's degree in CS at MIT World Peace University`}
+                speed={25}
+              />
+            </li>
+            <br />
+            <li>
+              <TypedContent component='h2' content='📫 Mail me at contact@retrixe.xyz' speed={25} />
+            </li>
+            <br />
+            <li>
+              <TypedContent component='h2' content='💬 Reach me via Discord here' speed={25} />
+            </li>
+            <br />
+            <li>
+              <TypedContent component='h2' content='🐧 Fedora Workstation 40' speed={25} />
+            </li>
+          </ul>
+        )}
       </CentredContent>
     </>
   )
@@ -23,6 +72,19 @@ function HomePage(): JSX.Element {
 export default HomePage
 
 /* TODO
+- top and bottom of the page fade away as you scroll
+- description fades in (or, slides/fades in from the sides)
+- image placeholders before they load?
+- just go with regular cards for projects nothing fancy
+- shiny links
+- page transitions
+
+format of website:
+<heading>
+<content>
+<cards with projects>
+<random shit at the end maybe>
+
 I'm a student at MIT World Peace University, with years of experience working on many different projects. Formerly worked full-time at Apconic Software Pvt Ltd for a year, and in my spare time, I work on multiple open-source projects.
 
 - 🎆 I have in-depth experience using JavaScript (TypeScript, Node.js, React, React Native and associated tools like Babel and webpack), Java, Kotlin and Golang (a personal favourite). I started learning programming with Python, but I haven't worked with it seriously in a long time. I've used databases like MySQL/MariaDB, MongoDB, PostgreSQL and Redis and I'm interested in using more like Cassandra and Elastisearch in the future. I've worked with a variety of technologies and read about many more, so this is by no means an exhaustive list.
@@ -41,7 +103,7 @@ I'm a student at MIT World Peace University, with years of experience working on
 - 🎓 I'm currently studying a bachelor's degree in Computer Science at MIT World Peace University.
 - 📰 I've previously worked on [ez.chat (could restart in free time)](https://github.com/ezchat), [Area51](https://github.com/retrixe/area51) (serve files over HTTP), [decaffeinater](https://github.com/retrixe/decaffeinater), reconsole and electron-installer-linux.
 - 💬 Ask me about anything I know! I'm sure I can help you out and point you in the right direction, from hardware and software issues to programming problems, especially with languages I know, and otherwise having read about many different technologies.
-- 📫 How to reach me: Likely my committer address :^) I'm [@retrixe](https://github.com/retrixe) on GitHub, and I have a Discord server for my projects [here](https://discord.gg/MFSJa9TpPS).
+- 📫 How to reach me: [contact@retrixe.xyz](mailto:contact@retrixe.xyz) I'm [@retrixe](https://github.com/retrixe) on GitHub, and I have a Discord server for my projects [here](https://discord.gg/MFSJa9TpPS).
 - ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP.
 - 🐛 Good tip: Minimise external dependencies in your projects.
 */
