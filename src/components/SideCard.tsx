@@ -25,12 +25,12 @@ const StyledHeader = styled.h1({ marginBottom: '1rem' })
 const StyledLink = styled(Link)({ color: 'var(--link-color)' })
 
 const SideCard = (props: {
-  title: string | JSX.Element
+  title: string | React.JSX.Element
   description: string
-  image?: JSX.Element
+  image?: React.JSX.Element
   href?: string
   openOn: 'left' | 'right'
-}): JSX.Element => {
+}): React.JSX.Element => {
   // FIXME: the border should extend to the edge of the display and fade
   // FIXME: the cards should animate into view
   // FIXME: this isn't really responsive

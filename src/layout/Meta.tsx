@@ -10,7 +10,7 @@ const Meta = ({
   description: string
   url: string
   noIndex?: boolean
-}): JSX.Element => (
+}): React.JSX.Element => (
   <Head>
     <title>{title}</title>
     <meta property='og:type' content='website' />

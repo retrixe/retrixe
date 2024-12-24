@@ -4,7 +4,7 @@ import CentredContent from '../../src/layout/CentredContent'
 import TypedContent from '../../src/components/TypedContent'
 import { useState } from 'react'
 
-function HomePage(): JSX.Element {
+function HomePage(): React.JSX.Element {
   // FIXME: Work without JavaScript
   // FIXME: This is kinda ugly, to be quite honest
   const [titleRendered, setTitleRendered] = useState(false)
@@ -12,7 +12,7 @@ function HomePage(): JSX.Element {
   return (
     <>
       <Meta
-        title={"Home - retrixe's site"}
+        title="Home - retrixe's site"
         description='The home page to my website.'
         url='https://retrixe.xyz/'
       />

@@ -5,7 +5,7 @@ const TypedContent = (props: {
   onFinish?: () => void
   content: string
   speed: number
-}): JSX.Element => {
+}): React.JSX.Element => {
   const [content, setContent] = useState('')
 
   const { onFinish } = props

@@ -39,7 +39,7 @@ const GitHubImage = styled(Image)({
   '@media (prefers-color-scheme: dark)': { filter: 'brightness(0) invert(1)' },
 })
 
-const TopBar = (): JSX.Element => {
+const TopBar = (): React.JSX.Element => {
   const router = useRouter()
 
   return (
@@ -62,7 +62,7 @@ const TopBar = (): JSX.Element => {
           rel='noopener noreferrer'
           last
         >
-          <GitHubImage src={githubMark} alt='GitHub' height={28} width={28} />
+          <GitHubImage src={githubMark as string} alt='GitHub' height={28} width={28} />
         </StyledLink>
       </TopBarContainer>
       <TopBarSpacer />

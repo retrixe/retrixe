@@ -3,11 +3,11 @@ import Meta from '../../src/layout/Meta'
 import TopBar from '../../src/layout/TopBar'
 import TicTacToeGame from '../../src/experiments/tictactoe/TicTacToeGame'
 
-function TicTacToePage(): JSX.Element {
+function TicTacToePage(): React.JSX.Element {
   return (
     <>
       <Meta
-        title={"Tic-Tac-Toe - Experiments - retrixe's site"}
+        title="Tic-Tac-Toe - Experiments - retrixe's site"
         description='A stab at implementing tic-tac-toe with only my brain.'
         url='https://retrixe.xyz/experiments/tictactoe'
       />

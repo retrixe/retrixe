@@ -1,8 +1,8 @@
-import { type MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
 
 export const renderGrid = (cx: CanvasRenderingContext2D, width: number, height: number): void => {
   cx.lineWidth = 1
-  const lines: Array<[number, number]> = [
+  const lines: [number, number][] = [
     [width / 3, 0],
     [(width * 2) / 3, 0],
     [0, height / 3],

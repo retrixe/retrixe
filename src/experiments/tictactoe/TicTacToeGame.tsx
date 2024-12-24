@@ -26,7 +26,7 @@ const TicTacToeGameControls = styled.div({
   marginTop: '1rem',
 })
 
-const TicTacToeGame = (): JSX.Element => {
+const TicTacToeGame = (): React.JSX.Element => {
   const darkMode = useDarkMode()
   const [gameState, setGameState] = useState<GameState>([
     [null, null, null],

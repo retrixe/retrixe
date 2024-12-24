@@ -3,7 +3,7 @@ import Meta from '../src/layout/Meta'
 import TopBar from '../src/layout/TopBar'
 import CentredContent from '../src/layout/CentredContent'
 
-import { type GetStaticPropsResult } from 'next'
+import type { GetStaticPropsResult } from 'next'
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
@@ -18,11 +18,11 @@ const HomePageContent = styled(CentredContent)({
   '& *': { marginBottom: '1rem' },
 })
 
-function HomePage(props: { html: string }): JSX.Element {
+function HomePage(props: { html: string }): React.JSX.Element {
   return (
     <>
       <Meta
-        title={"Home - retrixe's site"}
+        title="Home - retrixe's site"
         description='The home page to my website.'
         url='https://retrixe.xyz/'
       />
@@ -38,10 +38,13 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<{ html: str
     props: {
       html: String(
         await unified()
+          // @ts-expect-error -- this works fine
           .use(remarkParse)
           .use(remarkGfm)
           .use(remarkRehype)
+          // @ts-expect-error -- this works fine
           .use(rehypePresetMinify)
+          // @ts-expect-error -- this works fine
           .use(rehypeStringify)
           .process(await read('README.md')),
       ),

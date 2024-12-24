@@ -1,7 +1,7 @@
 import createCache from '@emotion/cache'
 import { CacheProvider, Global, css } from '@emotion/react'
 
-import { type AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { Inter } from 'next/font/google'
 
 const cache = createCache({ key: 'next' })
@@ -19,7 +19,7 @@ const inter = Inter({
 const App = ({
   Component,
   pageProps,
-}: AppProps & { Component: () => JSX.Element }): JSX.Element => (
+}: AppProps & { Component: () => React.JSX.Element }): React.JSX.Element => (
   <CacheProvider value={cache}>
     <Global
       styles={css`
@@ -47,8 +47,8 @@ const App = ({
         }
 
         body {
-          font-family: ${inter.style.fontFamily}, system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-            Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+          font-family: ${inter.style.fontFamily}, system-ui, 'Segoe UI', Roboto, Oxygen-Sans,
+            Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
             'Segoe UI Emoji', 'Segoe UI Symbol';
           background-color: var(--background-color);
           color: var(--color);

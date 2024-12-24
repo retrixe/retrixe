@@ -3,11 +3,11 @@ import Meta from '../../src/layout/Meta'
 import TopBar from '../../src/layout/TopBar'
 import SideCard from '../../src/components/SideCard'
 
-function ExperimentsPage(): JSX.Element {
+function ExperimentsPage(): React.JSX.Element {
   return (
     <>
       <Meta
-        title={"Experiments - retrixe's site"}
+        title="Experiments - retrixe's site"
         description='A bunch of random experiments.'
         url='https://retrixe.xyz/experiments'
       />
