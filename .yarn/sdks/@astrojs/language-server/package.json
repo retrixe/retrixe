@@ -1,0 +1,9 @@
+{
+  "name": "@astrojs/language-server",
+  "version": "2.15.4-sdk",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "bin": {
+    "astro-ls": "./bin/nodeServer.js"
+  }
+}

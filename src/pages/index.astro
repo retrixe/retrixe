@@ -1,0 +1,45 @@
+---
+import CentredContent from '../layouts/CentredContent.astro'
+import Document from '../layouts/Document.astro'
+import TopBar from '../layouts/TopBar.astro'
+
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkGfm from 'remark-gfm'
+import remarkRehype from 'remark-rehype'
+import rehypePresetMinify from 'rehype-preset-minify'
+import rehypeStringify from 'rehype-stringify'
+import { read } from 'to-vfile'
+
+const html = String(
+  await unified()
+    // @ts-expect-error -- this works fine
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    // @ts-expect-error -- this works fine
+    .use(rehypePresetMinify)
+    // @ts-expect-error -- this works fine
+    .use(rehypeStringify)
+    .process(await read('README.md')),
+)
+---
+
+<Document
+  title="Home - retrixe's site"
+  description='The home page to my website.'
+  url='https://retrixe.xyz/'
+>
+  <style lang='scss'>
+    .homepage-content {
+      :global(h3) {
+        font-size: 1.5em; /* Personal preference, copying the h2 size here */
+      }
+      :global(*) {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+  <TopBar />
+  <CentredContent class='homepage-content' set:html={html} />
+</Document>

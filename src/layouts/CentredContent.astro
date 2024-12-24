@@ -1,0 +1,13 @@
+<style lang='scss'>
+  div {
+    padding: 8px;
+    @media screen and (min-width: 968px) {
+      width: 900px;
+      margin-top: 1rem;
+      align-self: center;
+    }
+  }
+</style>
+<div {...Astro.props}>
+  <slot />
+</div>

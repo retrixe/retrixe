@@ -1,0 +1,17 @@
+---
+import PageContent from '../../components/react/experiments/next/PageContent'
+import CentredContent from '../../layouts/CentredContent.astro'
+import Document from '../../layouts/Document.astro'
+import TopBar from '../../layouts/TopBar.astro'
+---
+
+<Document
+  title="(Experimental) Home - retrixe's site"
+  description='(Experimental) The home page to my website.'
+  url='https://retrixe.xyz/experiments/next'
+>
+  <TopBar />
+  <CentredContent>
+    <PageContent client:load />
+  </CentredContent>
+</Document>

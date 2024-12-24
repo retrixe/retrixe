@@ -1,7 +1,4 @@
-import Meta from '../../src/layout/Meta'
-import TopBar from '../../src/layout/TopBar'
-import CentredContent from '../../src/layout/CentredContent'
-import TypedContent from '../../src/components/TypedContent'
+import TypedContent from './TypedContent'
 import { useState } from 'react'
 
 function HomePage(): React.JSX.Element {
@@ -11,60 +8,52 @@ function HomePage(): React.JSX.Element {
 
   return (
     <>
-      <Meta
-        title="Home - retrixe's site"
-        description='The home page to my website.'
-        url='https://retrixe.xyz/'
+      <TypedContent
+        component='h1'
+        content={`Hey, I'm ibu o/`}
+        speed={100}
+        onFinish={() => {
+          setTitleRendered(true)
+        }}
       />
-      <TopBar />
-      <CentredContent>
-        <TypedContent
-          component='h1'
-          content={`Hey, I'm ibu o/`}
-          speed={100}
-          onFinish={() => {
-            setTitleRendered(true)
-          }}
-        />
-        <br />
-        {titleRendered && (
-          <ul>
-            <li>
-              {/* FIXME: could we dynamically calculate this?... */}
-              <TypedContent component='h2' content='✨ Age: 20' speed={25} />
-            </li>
-            <br />
-            <li>
-              {/* FIXME: this could be better... */}
-              <TypedContent
-                component='h2'
-                content='🎆 Experience: Java, Kotlin, Golang, Rust, Python, TypeScript, and more'
-                speed={25}
-              />
-            </li>
-            <br />
-            <li>
-              <TypedContent
-                component='h2'
-                content={`🎓 Pursuing bachelor's degree in CS at MIT World Peace University`}
-                speed={25}
-              />
-            </li>
-            <br />
-            <li>
-              <TypedContent component='h2' content='📫 Mail me at contact@retrixe.xyz' speed={25} />
-            </li>
-            <br />
-            <li>
-              <TypedContent component='h2' content='💬 Reach me via Discord here' speed={25} />
-            </li>
-            <br />
-            <li>
-              <TypedContent component='h2' content='🐧 Fedora Workstation 40' speed={25} />
-            </li>
-          </ul>
-        )}
-      </CentredContent>
+      <br />
+      {titleRendered && (
+        <ul>
+          <li>
+            {/* FIXME: could we dynamically calculate this?... */}
+            <TypedContent component='h2' content='✨ Age: 20' speed={25} />
+          </li>
+          <br />
+          <li>
+            {/* FIXME: this could be better... */}
+            <TypedContent
+              component='h2'
+              content='🎆 Experience: Java, Kotlin, Golang, Rust, Python, TypeScript, and more'
+              speed={25}
+            />
+          </li>
+          <br />
+          <li>
+            <TypedContent
+              component='h2'
+              content={`🎓 Pursuing bachelor's degree in CS at MIT World Peace University`}
+              speed={25}
+            />
+          </li>
+          <br />
+          <li>
+            <TypedContent component='h2' content='📫 Mail me at contact@retrixe.xyz' speed={25} />
+          </li>
+          <br />
+          <li>
+            <TypedContent component='h2' content='💬 Reach me via Discord here' speed={25} />
+          </li>
+          <br />
+          <li>
+            <TypedContent component='h2' content='🐧 Fedora Workstation 40' speed={25} />
+          </li>
+        </ul>
+      )}
     </>
   )
 }

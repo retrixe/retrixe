@@ -1,6 +1,7 @@
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import nextPlugin from '@next/eslint-plugin-next'
+// FIXME: This doesn't work! Once it does, remove Prettier checks too!
+// import eslintPluginAstro from 'eslint-plugin-astro'
 import standardJsx from 'eslint-config-standard-jsx'
 import standardReact from 'eslint-config-standard-react'
 import react from 'eslint-plugin-react'
@@ -16,22 +17,19 @@ export default tseslint.config(
       '.pnp.cjs',
       '.pnp.loader.mjs',
       '.yarn',
-      '.next',
+      '.astro',
       '.prettierrc.mjs',
       '*.config.{mjs,js}',
     ],
   },
   js.configs.recommended,
-  tseslint.configs.strictTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
+  tseslint.configs.strict, // FIXME: Use type checked rules!
+  tseslint.configs.stylistic, // FIXME: Use type checked rules!
   react.configs.flat.recommended,
   pluginPromise.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended, // Could use TypeScript resolver
   nodePlugin.configs['flat/recommended-module'],
-  {
-    plugins: { '@next/next': nextPlugin },
-    rules: nextPlugin.configs.recommended.rules,
-  },
+  // ...eslintPluginAstro.configs.recommended,
   {
     plugins: { 'react-hooks': reactHooks },
     rules: reactHooks.configs.recommended.rules,
@@ -49,6 +47,7 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/no-confusing-void-expression': 'off',
       '@typescript-eslint/no-import-type-side-effects': ['error'],
+      /* FIXME: Use type-checked rules!
       '@typescript-eslint/consistent-type-imports': [
         'error',
         {
@@ -66,7 +65,7 @@ export default tseslint.config(
           allowRegExp: false,
           allowNever: false,
         },
-      ],
+      ], */
       'promise/always-return': ['error', { ignoreLastCallback: true }],
       'n/no-missing-import': 'off',
       'n/no-unsupported-features/node-builtins': 'off',

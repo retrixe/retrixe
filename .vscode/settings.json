@@ -7,5 +7,19 @@
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "astro.language-server.ls-path": ".yarn/sdks/@astrojs/language-server/bin/nodeServer.js",
+  // FIXME: This is broken!
+  //"eslint.validate": [
+  //  "javascript",
+  //  "javascriptreact",
+  //  "astro",
+  //  "typescript",
+  //  "typescriptreact"
+  //],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    // FIXME: This is broken!
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

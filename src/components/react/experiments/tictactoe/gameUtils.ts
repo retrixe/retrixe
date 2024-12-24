@@ -8,7 +8,8 @@ export type GameState = [GameStateRow, GameStateRow, GameStateRow]
 
 export const checkWinner = (gameState: GameState): Player | null => {
   // Check horizontal and vertical lines.
-  for (let i = 0; i < 3; i++) {
+  for (let idx = 0; idx < 3; idx++) {
+    const i = idx as 0 | 1 | 2
     if (
       gameState[i][0] === gameState[i][1] &&
       gameState[i][1] === gameState[i][2] &&

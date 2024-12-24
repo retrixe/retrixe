@@ -1,0 +1,77 @@
+---
+// import GitHubImage from '../assets/github-mark.svg' FIXME: Inlining doesn't work :grief:
+
+const getLinkClass = (path: string, last?: boolean) => [
+  Astro.routePattern === path ? 'styled-link' : 'unstyled-link',
+  last ? 'last-link' : '',
+]
+---
+
+<style lang='scss'>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--divider-color);
+    margin-bottom: 0.8rem;
+    backdrop-filter: blur(20px);
+  }
+
+  .top-bar-spacer {
+    height: 4rem;
+  }
+
+  .top-bar-title {
+    flex: 1;
+  }
+
+  .unstyled-link {
+    color: var(--color);
+    text-decoration: none;
+    margin-right: 8px;
+  }
+
+  .styled-link {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  .last-link {
+    margin-right: 0px;
+  }
+
+  .divider {
+    border-left: 1px solid var(--divider-color);
+    height: 28px;
+    margin-right: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .github-image {
+      filter: brightness(0) invert(1);
+    }
+  }
+</style>
+<div class='top-bar'>
+  <h2 class='top-bar-title'>
+    <a class='unstyled-link' href='/'>retrixe's site</a>
+  </h2>
+
+  <a href='/' class:list={getLinkClass('/')}>Home</a>
+  <div class='divider'></div>
+  <a href='/experiments' class:list={getLinkClass('/experiments')}>Experiments</a>
+  <div class='divider'></div>
+  <a
+    href='https://github.com/retrixe'
+    target='_blank'
+    rel='noopener noreferrer'
+    class='unstyled-link last-link'
+  >
+    <img src='/github-mark.svg' class='github-image' height={28} width={28} />
+  </a>
+</div>
+<div class='top-bar-spacer'></div>

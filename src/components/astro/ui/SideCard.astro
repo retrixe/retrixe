@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title: string
+  description: string
+  image?: string
+  href?: string
+  openOn: 'left' | 'right'
+}
+
+const { title, description, image, href, openOn } = Astro.props
+---
+
+<style lang='scss'>
+  .side-card {
+    border-radius: 1em;
+    border: 1px solid var(--divider-color);
+    padding: 2rem;
+    display: flex;
+    width: fit-content;
+    min-width: 60%;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .left {
+    border-left: 0px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .right {
+    border-right: 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .flex-div {
+    display: flex;
+  }
+
+  .flex-spacer {
+    flex: 1;
+  }
+
+  .image-left {
+    margin-left: 2rem;
+  }
+
+  .image-right {
+    margin-right: 2rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .link {
+    color: var(--text-color);
+  }
+</style>
+<div class='flex-div'>
+  {openOn === 'right' ? <div class='flex-spacer' /> : null}
+  <div class:list={['side-card', openOn]}>
+    {image != null && openOn === 'right' && <div class='image-right'>{image}</div>}
+    <div>
+      <h1 class='header'>
+        {href ? <a href={href}>{title}</a> : title}
+      </h1>
+      <p>{description}</p>
+    </div>
+    {image != null && openOn === 'left' && <div class='image-left'>{image}</div>}
+  </div>
+</div>

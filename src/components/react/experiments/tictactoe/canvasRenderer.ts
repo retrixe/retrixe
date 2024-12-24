@@ -63,13 +63,15 @@ export const getCursorPositionOnCanvas = (
   return [event.clientX - canvasBounds.left, event.clientY - canvasBounds.top]
 }
 
-export const getCursorPositionOnGrid = (event: MouseEvent<HTMLCanvasElement>): [number, number] => {
+type CursorPos = [-1 | 0 | 1 | 2, -1 | 0 | 1 | 2]
+
+export const getCursorPositionOnGrid = (event: MouseEvent<HTMLCanvasElement>): CursorPos => {
   const [x, y] = getCursorPositionOnCanvas(event)
   const canvasBounds = event.currentTarget.getBoundingClientRect()
-  const pos: [number, number] = [
+  const pos = [
     Math.floor((x / canvasBounds.width) * 3),
     Math.floor((y / canvasBounds.height) * 3),
-  ]
+  ] as CursorPos
   if (pos[0] < 0 || pos[0] > 2 || pos[1] < 0 || pos[1] > 2) {
     return [-1, -1]
   } else {

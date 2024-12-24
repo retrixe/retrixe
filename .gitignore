@@ -1,3 +1,5 @@
+.astro/
+
 .yarn/*
 !.yarn/patches
 !.yarn/releases

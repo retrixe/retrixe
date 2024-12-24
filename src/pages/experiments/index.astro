@@ -1,0 +1,29 @@
+---
+import SideCard from '../../components/astro/ui/SideCard.astro'
+import CentredContent from '../../layouts/CentredContent.astro'
+import Document from '../../layouts/Document.astro'
+import TopBar from '../../layouts/TopBar.astro'
+---
+
+<Document
+  title="Experiments - retrixe's site"
+  description='A bunch of random experiments.'
+  url='https://retrixe.xyz/experiments'
+>
+  <TopBar />
+  <CentredContent>
+    <SideCard
+      openOn='left'
+      title='Tic-Tac-Toe'
+      href='/experiments/tictactoe'
+      description='A stab at implementing tic-tac-toe with only my brain.'
+    />
+    <SideCard
+      openOn='right'
+      title='HomePage V2'
+      href='/experiments/next'
+      description='New version of the homepage.'
+    />
+    <p>Note: This page is experimental and still being designed.</p>
+  </CentredContent>
+</Document>

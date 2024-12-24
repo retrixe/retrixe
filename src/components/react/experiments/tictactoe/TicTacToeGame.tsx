@@ -1,30 +1,10 @@
 import { type MouseEventHandler, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import styled from '@emotion/styled'
 import { getCursorPositionOnGrid, renderCircle, renderCross, renderGrid } from './canvasRenderer'
 import { type GameState, Player, checkWinner } from './gameUtils'
+import styles from './TicTacToeGame.module.scss'
 import useDarkMode from '../../utils/useDarkMode'
-import Button from '../../components/Button'
-import Select from '../../components/Select'
-
-const TicTacToeGameContainer = styled.div({
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-})
-
-const TicTacToeGameCanvas = styled.canvas({
-  border: '1px solid var(--color)',
-  borderRadius: '8px',
-})
-
-const TicTacToeGameControls = styled.div({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  width: '100%',
-  marginTop: '1rem',
-})
+import Button from '../../ui/Button'
+import Select from '../../ui/Select'
 
 const TicTacToeGame = (): React.JSX.Element => {
   const darkMode = useDarkMode()
@@ -98,10 +78,16 @@ const TicTacToeGame = (): React.JSX.Element => {
   }
 
   return (
-    <TicTacToeGameContainer>
+    <div className={styles.container}>
       <div>
-        <TicTacToeGameCanvas ref={canvasRef} height='300' width='300' onClick={handleClick} />
-        <TicTacToeGameControls>
+        <canvas
+          className={styles.canvas}
+          ref={canvasRef}
+          height='300'
+          width='300'
+          onClick={handleClick}
+        />
+        <div className={styles.controls}>
           <Select
             value={mode}
             onChange={e => {
@@ -113,9 +99,9 @@ const TicTacToeGame = (): React.JSX.Element => {
             <option value='minmax'>Minmax</option>
           </Select>
           <Button onClick={handleReset}>Reset</Button>
-        </TicTacToeGameControls>
+        </div>
       </div>
-    </TicTacToeGameContainer>
+    </div>
   )
 }
 
