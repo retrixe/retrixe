@@ -1,5 +1,5 @@
 ---
-// import GitHubImage from '../assets/github-mark.svg' FIXME: Inlining doesn't work :grief:
+import GitHubImage from '../../public/github-mark.svg'
 
 const getLinkClass = (path: string, last?: boolean) => [
   Astro.routePattern === path ? 'styled-link' : 'unstyled-link',
@@ -71,7 +71,7 @@ const getLinkClass = (path: string, last?: boolean) => [
     rel='noopener noreferrer'
     class='unstyled-link last-link'
   >
-    <img src='/github-mark.svg' class='github-image' height={28} width={28} />
+    <GitHubImage class='github-image' viewBox='0 0 98 96' height='28' width='28' />
   </a>
 </div>
 <div class='top-bar-spacer'></div>

@@ -1,5 +1,5 @@
-export default {
-  plugins: [import('prettier-plugin-astro')],
+module.exports = {
+  plugins: [require.resolve('prettier-plugin-astro')],
   overrides: [
     {
       files: '*.astro',

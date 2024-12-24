@@ -18,13 +18,13 @@ export default tseslint.config(
       '.pnp.loader.mjs',
       '.yarn',
       '.astro',
-      '.prettierrc.mjs',
+      '.prettierrc.cjs',
       '*.config.{mjs,js}',
     ],
   },
   js.configs.recommended,
-  tseslint.configs.strict, // FIXME: Use type checked rules!
-  tseslint.configs.stylistic, // FIXME: Use type checked rules!
+  tseslint.configs.strictTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
   react.configs.flat.recommended,
   pluginPromise.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended, // Could use TypeScript resolver
@@ -47,7 +47,6 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/no-confusing-void-expression': 'off',
       '@typescript-eslint/no-import-type-side-effects': ['error'],
-      /* FIXME: Use type-checked rules!
       '@typescript-eslint/consistent-type-imports': [
         'error',
         {
@@ -65,7 +64,7 @@ export default tseslint.config(
           allowRegExp: false,
           allowNever: false,
         },
-      ], */
+      ],
       'promise/always-return': ['error', { ignoreLastCallback: true }],
       'n/no-missing-import': 'off',
       'n/no-unsupported-features/node-builtins': 'off',
