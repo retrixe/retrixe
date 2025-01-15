@@ -2,13 +2,13 @@
 
 I'm a student at MIT World Peace University, with years of experience working on many different projects. Formerly worked full-time at Apconic Software Pvt Ltd for a year, and in my spare time, I work on multiple open-source projects.
 
-- 🎆 I have in-depth experience using JavaScript (TypeScript, Node.js, React, React Native and associated tools like Babel and webpack), Java, Kotlin and Golang (a personal favourite). I started learning programming with Python, but I haven't worked with it seriously in a long time. I've used databases like MySQL/MariaDB, MongoDB, PostgreSQL and Redis and I'm interested in using more like Cassandra and Elastisearch in the future. I've worked with a variety of technologies and read about many more, so this is by no means an exhaustive list.
+- 🎆 I have in-depth experience using JavaScript (TypeScript, Node.js, React, React Native and associated tools like Babel and webpack), Java, Kotlin and Golang (a personal favourite). I'm also familiar with using MySQL/MariaDB, PostgreSQL, MongoDB and Redis. I've worked with and studied many more technologies, so this is hardly an exhaustive list.
 - 🐧 I'm highly experienced with using Linux and system administration (tools like systemd, package management with apt/rpm, repairing broken systems, livepatch/kpatch, maintenance, system partitioning, database setup, nginx, etc).
 - 🔍 I'm really good at googling and following the xkcd tech support cheat sheet.
 - 🔭 I’m currently working on:
   - [EnderChat](https://github.com/retrixe/EnderChat) (a modern React Native rewrite of ChatCraft)
   - [octyne](https://github.com/retrixe/octyne)/[ecthelion](https://github.com/retrixe/ecthelion) (a process manager with a web dashboard)
-  - [writer](https://github.com/retrixe/writer) (GUI app to flash ISOs)
+  - [imprint](https://github.com/retrixe/imprint) (GUI app to flash ISOs)
   - [concinnity](https://github.com/retrixe/concinnity) (watch videos together)
   - [IveBot](https://github.com/retrixe/IveBot) (a Discord bot for random things)
   - Extensive work on [MythicMC](https://github.com/mythicmc) including a custom [store](https://store.mythicmc.org) and many plugins in Java/Kotlin.
