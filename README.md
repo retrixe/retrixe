@@ -16,7 +16,7 @@ I'm a student at MIT World Peace University, with years of experience working on
 - 🌱 I’m currently learning how to write a programming language and getting more familiar with C++ and Rust.
 - 🎓 I'm currently studying a bachelor's degree in Computer Science at MIT World Peace University.
 - 📰 I've previously worked on [modpack](https://github.com/retrixe/modpack), [bug-tracker](https://github.com/retrixe/bug-tracker), [coupe-video](https://github.com/retrixe/coupe-video), [cerulean](https://github.com/cerulean-app), [ez.chat](https://github.com/ezchat), [Area51](https://github.com/retrixe/area51), [decaffeinater](https://github.com/retrixe/decaffeinater) and reconsole.
-- 💬 Ask me about anything I know! I'm sure I can help you out and point you in the right direction, from hardware and software issues to programming problems, especially with languages I know, and otherwise having read about many different technologies.
+- 💬 Ask me about... anything, really! I have a lot of different interests I'd love to talk about, and if you need help with anything hardware/software, I'm sure I can point you in the right direction!
 - 📫 How to reach me: [contact@retrixe.xyz](mailto:contact@retrixe.xyz) :^) I'm [@retrixe](https://github.com/retrixe) on GitHub, and I have a Discord server for my projects [here](https://discord.gg/MFSJa9TpPS).
 - ⚡ Fun fact: Samsung is currently ~20% of South Korea’s GDP.
 - 🐛 Good tip: Minimise external dependencies in your projects.
