@@ -12,11 +12,7 @@ const TypedContent = (props: {
   useEffect(() => {
     if (content === props.content) return
     // For hot reload, mainly
-    if (!props.content.startsWith(content)) {
-      setContent(props.content)
-      onFinish?.()
-      return
-    }
+    if (!props.content.startsWith(content)) setContent('')
     const timeout = setTimeout(() => {
       setContent(content + props.content.charAt(content.length))
       if (content.length === props.content.length - 1) onFinish?.()

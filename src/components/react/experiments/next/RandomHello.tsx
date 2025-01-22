@@ -16,11 +16,17 @@ const hellos = [
 
 // The fact I use React just for this will probably land me in the International Criminal Court for war crimes
 const RandomHello = (): React.JSX.Element => {
-  // TODO: Maybe retype "Hello" in another language from time to time?
-
   /* eslint-disable @typescript-eslint/no-non-null-assertion */
   const [hello, setHello] = useState(hellos[2]!) // yeah? why not? yeah im a little bit of a weeb?
-  useEffect(() => setHello(hellos[Math.floor(Math.random() * hellos.length)]!), [])
+
+  useEffect(() => {
+    setHello(hellos[Math.floor(Math.random() * hellos.length)]!)
+    const interval = setInterval(
+      () => setHello(hellos[Math.floor(Math.random() * hellos.length)]!),
+      5 * 1000,
+    )
+    return () => clearInterval(interval)
+  }, [])
   /* eslint-enable @typescript-eslint/no-non-null-assertion */
 
   return <TypedContent component='h1' content={hello} speed={100} />
