@@ -28,12 +28,10 @@ const TypedContent = (props: {
   const { component: Component } = props
 
   return (
-    <>
-      <noscript>
-        <Component aria-label={props.content}>{props.content}</Component>
-      </noscript>
-      <Component aria-label={content}>{content}</Component>
-    </>
+    <Component aria-label={content}>
+      {content || '\u200B'}
+      <noscript>{props.content}</noscript>
+    </Component>
   )
 }
 
