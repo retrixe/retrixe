@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/inter'
+// import '@fontsource-variable/inter'
 
 interface Props {
   title: string
@@ -78,20 +78,8 @@ const { title, description, url, noIndex } = Astro.props
       }
 
       body {
-        font-family:
-          Inter Variable,
-          system-ui,
-          'Segoe UI',
-          Roboto,
-          Oxygen-Sans,
-          Ubuntu,
-          Cantarell,
-          'Helvetica Neue',
-          Helvetica,
-          Arial,
-          sans-serif,
-          'Apple Color Emoji',
-          'Segoe UI Emoji',
+        font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+          'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
           'Segoe UI Symbol';
         background-color: var(--background-color);
         color: var(--color);

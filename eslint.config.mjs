@@ -20,6 +20,7 @@ export default tseslint.config(
       '.astro',
       '.prettierrc.cjs',
       '*.config.{mjs,js}',
+      'dist',
     ],
   },
   js.configs.recommended,

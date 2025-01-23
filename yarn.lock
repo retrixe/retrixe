@@ -861,13 +861,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/inter@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@fontsource-variable/inter@npm:5.1.0"
-  checksum: 10c0/6b46019c71380f6e18427b4b19468a9a656609fcf613b8472f7b928ec1bc6f13b03d1dd0bb9536cd168a53e58c009465e2245cd87ef57f9925a07d2306bd8f58
-  languageName: node
-  linkType: hard
-
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -8062,7 +8055,6 @@ __metadata:
     "@astrojs/react": "npm:^4.1.2"
     "@astrojs/ts-plugin": "npm:^1.10.4"
     "@eslint/js": "npm:^9.17.0"
-    "@fontsource-variable/inter": "npm:^5.1.0"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     astro: "npm:^5.1.1"
