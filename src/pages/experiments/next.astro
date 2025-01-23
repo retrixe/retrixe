@@ -8,12 +8,10 @@ import Button from '../../components/react/ui/Button'
 import GitHubImage from '../../../public/github-mark.svg'
 import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
 
-// TODO: System font stack?...
-// TODO: Fade the top and bottom of the page as you scroll
-// TODO: Image placeholders before they load (At least avoid layout shifting)
-
+// TODO: System font stack?
 // TODO: Move RandomHello to vanilla JS
 // TODO: Add EnderChat dark mode and IveBot images
+// TODO: Fade the top and bottom of the page as you scroll?
 
 // Internal images: EnderChat, imprint, octyne
 // External images: concinnity, MythicMC
@@ -94,16 +92,25 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           type='image/webp'
           srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/enderchat-light.webp'
         />
+        <source
+          type='image/avif'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/enderchat-light.avif'
+        />
         <img
           class='segment-image'
           alt='Screenshots of EnderChat in action'
           src='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/enderchat-light.png'
+          style='aspect-ratio: 4320 / 2560;'
         />
       </picture>
     </div>
     <hr />
     <div class='segment-with-image'>
       <picture>
+        <source
+          type='image/avif'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/octyne.avif'
+        />
         <source
           type='image/webp'
           srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/octyne.webp'
@@ -112,6 +119,7 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           class='segment-image'
           alt='A screenshot of Octyne/Ecthelion in action'
           src='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/octyne.png'
+          style='aspect-ratio: 3296 / 2060;'
         />
       </picture>
       <div>
@@ -170,9 +178,18 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
       </div>
       <picture>
         <source
+          type='image/avif'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-dark-noshadow.avif'
+          media='(prefers-color-scheme: dark)'
+        />
+        <source
           type='image/webp'
           srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-dark-noshadow.webp'
           media='(prefers-color-scheme: dark)'
+        />
+        <source
+          type='image/avif'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-light-noshadow.avif'
         />
         <source
           type='image/webp'
@@ -180,14 +197,20 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
         />
         <img
           class='segment-image'
-          alt='A screenshot of the concinnity website'
+          alt='A screenshot of Imprint'
           src='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-light-noshadow.png'
+          style='aspect-ratio: 1281 / 714;'
         />
       </picture>
     </div>
     <hr />
     <div class='segment-with-image'>
       <picture>
+        <source
+          type='image/avif'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-dark.avif'
+          media='(prefers-color-scheme: dark)'
+        />
         <source
           type='image/webp'
           srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-dark.webp'
@@ -197,6 +220,10 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           type='image/jpeg'
           srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-dark.jpg'
           media='(prefers-color-scheme: dark)'
+        />
+        <source
+          type='image/avif'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-light.avif'
         />
         <source
           type='image/webp'
@@ -210,6 +237,7 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           class='segment-image'
           alt='A screenshot of the concinnity website'
           src='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-light.jpg'
+          style='aspect-ratio: 3296 / 2060;'
         />
       </picture>
       <div>
@@ -263,6 +291,7 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
         class='segment-image'
         src='https://mythicmc.org/assets/mythic_spawn.jpeg'
         alt='A screenshot playing MythicMC'
+        style='aspect-ratio: 1920 / 1080;'
       />
       <div>
         <h2>MythicMC</h2>
