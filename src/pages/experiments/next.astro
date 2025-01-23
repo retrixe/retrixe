@@ -3,14 +3,20 @@ import CentredContent from '../../layouts/CentredContent.astro'
 import Document from '../../layouts/Document.astro'
 import TopBar from '../../layouts/TopBar.astro'
 
-import RandomHello from '../../components/react/experiments/next/RandomHello' // TODO: Vanilla JS...
+import RandomHello from '../../components/react/experiments/next/RandomHello'
 import Button from '../../components/react/ui/Button'
 import GitHubImage from '../../../public/github-mark.svg'
 import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
 
+// TODO: System font stack?...
 // TODO: Fade the top and bottom of the page as you scroll
-// TODO: Image placeholders before they load
-// TODO: Overhaul the Button styles to match Concinnity
+// TODO: Image placeholders before they load (At least avoid layout shifting)
+
+// TODO: Move RandomHello to vanilla JS
+// TODO: Add EnderChat dark mode and IveBot images
+
+// Internal images: EnderChat, imprint, octyne
+// External images: concinnity, MythicMC
 ---
 
 <Document
@@ -83,12 +89,33 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           </Button>
         </a>
       </div>
-      {/* TODO: Image */}
+      <picture>
+        <source
+          type='image/webp'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/enderchat-light.webp'
+        />
+        <img
+          class='segment-image'
+          alt='Screenshots of EnderChat in action'
+          src='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/enderchat-light.png'
+        />
+      </picture>
     </div>
     <hr />
     <div class='segment-with-image'>
+      <picture>
+        <source
+          type='image/webp'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/octyne.webp'
+        />
+        <img
+          class='segment-image'
+          alt='A screenshot of Octyne/Ecthelion in action'
+          src='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/octyne.png'
+        />
+      </picture>
       <div>
-        <h2>octyne/ecthelion</h2>
+        <h2>Octyne/Ecthelion</h2>
         <br />
         <p>
           A process manager with an HTTP API for console and file access.
@@ -104,7 +131,7 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
         >
           <Button className='gutter-bottom'>
             <GitHubImage class='github-image' viewBox='0 0 98 96' height='1.2em' width='1.2em' />
-            octyne on GitHub
+            Octyne on GitHub
           </Button>
         </a>
         <a
@@ -119,7 +146,6 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           </Button>
         </a>
       </div>
-      {/* TODO: Image */}
     </div>
     <hr />
     <div class='segment-with-image'>
@@ -142,10 +168,50 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           </Button>
         </a>
       </div>
-      {/* TODO: Image */}
+      <picture>
+        <source
+          type='image/webp'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-dark-noshadow.webp'
+          media='(prefers-color-scheme: dark)'
+        />
+        <source
+          type='image/webp'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-light-noshadow.webp'
+        />
+        <img
+          class='segment-image'
+          alt='A screenshot of the concinnity website'
+          src='https://f002.backblazeb2.com/file/retrixe-storage-public/retrixe.xyz/imprint-light-noshadow.png'
+        />
+      </picture>
     </div>
     <hr />
     <div class='segment-with-image'>
+      <picture>
+        <source
+          type='image/webp'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-dark.webp'
+          media='(prefers-color-scheme: dark)'
+        />
+        <source
+          type='image/jpeg'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-dark.jpg'
+          media='(prefers-color-scheme: dark)'
+        />
+        <source
+          type='image/webp'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-light.webp'
+        />
+        <source
+          type='image/jpeg'
+          srcset='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-light.jpg'
+        />
+        <img
+          class='segment-image'
+          alt='A screenshot of the concinnity website'
+          src='https://f002.backblazeb2.com/file/retrixe-storage-public/concinnity/demo-light.jpg'
+        />
+      </picture>
       <div>
         <h2>concinnity</h2>
         <br />
@@ -171,7 +237,6 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           </Button>
         </a>
       </div>
-      {/* TODO: Image */}
     </div>
     <hr />
     <div class='segment-with-image'>
@@ -191,10 +256,14 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           <Button><OpenInNew /> IveBot dashboard</Button>
         </a>
       </div>
-      {/* TODO: Image */}
     </div>
     <hr />
     <div class='segment-with-image'>
+      <img
+        class='segment-image'
+        src='https://mythicmc.org/assets/mythic_spawn.jpeg'
+        alt='A screenshot playing MythicMC'
+      />
       <div>
         <h2>MythicMC</h2>
         <br />
@@ -215,7 +284,6 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
           <Button><OpenInNew /> MythicMC website</Button>
         </a>
       </div>
-      {/* TODO: Image */}
     </div>
     <hr />
     <div class='segment'>
@@ -229,7 +297,8 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
       <br />
       <p>
         📰 I have a bunch of projects I no longer maintain, but they still might be interesting to
-        someone: <a href='https://github.com/retrixe/modpack'>modpack</a>,
+        someone: <a href='https://github.com/retrixe/salezy'>salezy</a>,
+        <a href='https://github.com/retrixe/modpack'>modpack</a>,
         <a href='https://github.com/retrixe/bug-tracker'>bug-tracker</a>,
         <a href='https://github.com/retrixe/coupe-video'>coupe-video</a>,
         <a href='https://github.com/cerulean-app'>cerulean</a>,
@@ -278,23 +347,39 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
     margin: 2rem 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
     @media screen and (max-width: 600px) {
       align-items: baseline;
       flex-direction: column;
     }
   }
 
+  picture {
+    display: contents;
+    source {
+      display: none;
+    }
+  }
+
+  .segment-image {
+    min-width: 40%; /* Fix annoying layout shifts */
+    width: 40%;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 1rem var(--link-color));
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
   .header {
+    gap: 2rem;
     /* Shrink gap between header and the next segment */
     margin-bottom: 1rem;
     + .segment {
       margin-top: 0;
     }
-    /* Fix annoying layout shifts */
     :global(h1) {
-      line-height: 2.5rem;
+      line-height: 2.5rem; /* Fix annoying layout shifts */
     }
     @media screen and (max-width: 600px) {
       align-items: center;
@@ -303,6 +388,8 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
 
     img {
       border-radius: 50%;
+      min-width: 100px; /* Fix annoying layout shifts */
+      min-height: 100px;
       width: 100px;
       height: 100px;
       @media screen and (max-width: 600px) {
@@ -321,6 +408,7 @@ import OpenInNew from '../../../public/materialIcons/open-in-new.svg'
   .unstyled-link {
     color: var(--color);
     text-decoration: none;
+    display: contents;
   }
 
   button {
