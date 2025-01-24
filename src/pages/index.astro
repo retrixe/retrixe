@@ -60,7 +60,7 @@ import OpenInNew from '../../public/materialIcons/open-in-new.svg'
       </ul>
     </div>
     <hr />
-    <div class='segment-with-image'>
+    <div class='segment-with-image invert-on-mobile'>
       <div>
         <h2>EnderChat</h2>
         <br />
@@ -155,7 +155,7 @@ import OpenInNew from '../../public/materialIcons/open-in-new.svg'
       </div>
     </div>
     <hr />
-    <div class='segment-with-image'>
+    <div class='segment-with-image invert-on-mobile'>
       <div>
         <h2>imprint</h2>
         <br />
@@ -379,6 +379,9 @@ import OpenInNew from '../../public/materialIcons/open-in-new.svg'
     @media screen and (max-width: 600px) {
       align-items: baseline;
       flex-direction: column;
+      &.invert-on-mobile {
+        flex-direction: column-reverse;
+      }
     }
   }
 

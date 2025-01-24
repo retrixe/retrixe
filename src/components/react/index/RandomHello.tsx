@@ -11,7 +11,6 @@ const hellos = [
   'مرحبًا o/', // Arabic
   'Hej o/', // Swedish
   'नमस्ते o/', // Hindi
-  'नमस्कार o/', // Marathi
 ]
 
 // The fact I use React just for this will probably land me in the International Criminal Court for war crimes
