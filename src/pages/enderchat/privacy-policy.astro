@@ -9,7 +9,14 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import rehypePresetMinify from 'rehype-preset-minify'
 import rehypeStringify from 'rehype-stringify'
-import { read } from 'to-vfile'
+import { VFile } from 'vfile'
+
+const readmeURL = 'https://raw.githubusercontent.com/retrixe/EnderChat/refs/heads/main/README.md'
+
+const privacyPolicy = await fetch(readmeURL)
+  .then(res => res.text())
+  .then(text => text.slice(text.indexOf('## Privacy Policy')).replace('##', '# EnderChat\n\n##'))
+  .catch(() => "Failed to fetch EnderChat's privacy policy.")
 
 const html = String(
   await unified()
@@ -21,14 +28,14 @@ const html = String(
     .use(rehypePresetMinify)
     // @ts-expect-error -- this works fine
     .use(rehypeStringify)
-    .process(await read('README.md')),
+    .process(new VFile({ stem: 'readme', extname: '.md', value: privacyPolicy })),
 )
 ---
 
 <Document
-  title="README.md - retrixe's site"
-  description='The README.md on my GitHub rendered to HTML. Formerly the home page.'
-  url='https://retrixe.xyz/experiments/readme'
+  title="EnderChat Privacy Policy - retrixe's site"
+  description='Privacy policy for EnderChat.'
+  url='https://retrixe.xyz/enderchat/privacy-policy'
 >
   <style lang='scss'>
     .page-content {
