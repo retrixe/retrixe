@@ -1,5 +1,6 @@
 ---
 // import '@fontsource-variable/inter'
+import './Baseline.scss'
 
 interface Props {
   title: string
@@ -38,58 +39,18 @@ const { title, description, url, noIndex } = Astro.props
     <meta name='Description' content={description} />
     {noIndex === true && <meta name='robots' content='noindex,nofollow' />}
     <style lang='scss' is:global>
-      * {
-        margin: 0;
-        box-sizing: border-box;
-      }
+      :root {
+        --link-color: #8f00ff; /* Color: Was Bright pink (#ff007f), now Electric violet */
+        --background-color: #eee;
+        --color: #000000;
+        --divider-color: #bbb;
 
-      @view-transition {
-        navigation: auto;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
+        @media (prefers-color-scheme: dark) {
           color-scheme: dark;
           --link-color: #40e0d0; /* Color: Was Heliotrope (#df73ff), now Turquoise */
           --background-color: #111; /* Color: Was #333 */
           --color: #ffffff;
           --divider-color: #666;
-        }
-      }
-
-      @media (prefers-color-scheme: light) {
-        :root {
-          --link-color: #8f00ff; /* Color: Was Bright pink (#ff007f), now Electric violet */
-          --background-color: #eee;
-          --color: #000000;
-          --divider-color: #bbb;
-        }
-      }
-
-      hr {
-        border-color: var(--divider-color);
-      }
-
-      input,
-      button,
-      textarea,
-      select {
-        font: inherit;
-      }
-
-      body {
-        font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-          'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-          'Segoe UI Symbol';
-        background-color: var(--background-color);
-        color: var(--color);
-        width: 100vw;
-        max-width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        a {
-          color: var(--link-color);
         }
       }
     </style>

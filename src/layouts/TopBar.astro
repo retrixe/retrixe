@@ -1,65 +1,17 @@
 ---
 import GitHubImage from '../../public/github-mark.svg'
 
-const getLinkClass = (path: string, last?: boolean) => [
+// Based on Concinnity's TopBar
+
+const getLinkClass = (path: string) => [
   Astro.routePattern === path ? 'styled-link' : 'unstyled-link',
-  last ? 'last-link' : '',
 ]
 ---
 
-<style lang='scss'>
-  .top-bar {
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 4rem;
-    padding: 0rem 1rem;
-    border-bottom: 1px solid var(--divider-color);
-    backdrop-filter: blur(12px);
-  }
-
-  .top-bar-spacer {
-    height: 4rem;
-  }
-
-  .top-bar-title {
-    flex: 1;
-  }
-
-  .unstyled-link {
-    color: var(--color);
-    text-decoration: none;
-    margin-right: 8px;
-  }
-
-  .styled-link {
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 8px;
-  }
-
-  .last-link {
-    margin-right: 0px;
-  }
-
-  .divider {
-    border-left: 1px solid var(--divider-color);
-    height: 28px;
-    margin-right: 8px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .github-image {
-      filter: brightness(0) invert(1);
-    }
-  }
-</style>
 <div class='top-bar'>
-  <h2 class='top-bar-title'>
+  <h1 class='top-bar-title'>
     <a class='unstyled-link' href='/'>retrixe's site</a>
-  </h2>
+  </h1>
 
   <a href='/' class:list={getLinkClass('/')}>Home</a>
   <div class='divider'></div>
@@ -74,4 +26,52 @@ const getLinkClass = (path: string, last?: boolean) => [
     <GitHubImage class='github-image' viewBox='0 0 98 96' height='28' width='28' />
   </a>
 </div>
+
 <div class='top-bar-spacer'></div>
+
+<style lang='scss'>
+  .top-bar {
+    z-index: 100;
+    height: 4rem;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .top-bar-spacer {
+    height: 4rem;
+  }
+
+  .top-bar-title {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex: 1;
+  }
+
+  .unstyled-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .styled-link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .divider {
+    border-left: 1px solid var(--divider-color);
+    height: 28px;
+    margin: 0px 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .github-image {
+      filter: brightness(0) invert(1);
+    }
+  }
+</style>

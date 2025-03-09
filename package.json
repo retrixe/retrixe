@@ -15,8 +15,8 @@
   },
   "packageManager": "yarn@4.5.3",
   "dependencies": {
-    "@astrojs/react": "4.2.0",
-    "astro": "5.3.0",
+    "@astrojs/react": "4.2.1",
+    "astro": "5.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rehype-preset-minify": "^7.0.1",

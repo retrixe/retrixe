@@ -1,0 +1,35 @@
+// Copyright 2025 Ibrahim Ansari
+// SPDX-License-Identifier: Apache-2.0
+
+@use './CssReset.scss';
+
+:root {
+  color-scheme: light;
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: var(--background-color);
+  color: var(--color);
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--link-color);
+}
+
+hr {
+  border-color: var(--divider-color);
+}
+
+@view-transition {
+  navigation: auto;
+}
