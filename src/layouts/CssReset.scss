@@ -21,8 +21,28 @@ textarea {
 }
 
 body {
-  /* line-height: 1.5; -- Not sure what to make of this, personally */
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+h2 {
+  line-height: 1.25;
+}
+
+h3 {
+  line-height: 1.3;
+}
+
+h4 {
+  line-height: 1.35;
+}
+
+h6 {
+  line-height: 1.6;
 }
 
 img,
