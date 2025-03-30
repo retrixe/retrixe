@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import TypedContent from './TypedContent'
 
 const hellos = [
@@ -16,14 +16,22 @@ const hellos = [
 // The fact I use React just for this will probably land me in the International Criminal Court for war crimes
 const RandomHello = (): React.JSX.Element => {
   /* eslint-disable @typescript-eslint/no-non-null-assertion */
+  const remainingHellos = useRef([...hellos]) // this is a bit of a hack but it works
   const [hello, setHello] = useState(hellos[2]!) // yeah? why not? yeah im a little bit of a weeb?
 
+  const pickHello = () => {
+    if (remainingHellos.current.length === 0) {
+      remainingHellos.current = [...hellos]
+    }
+    const index = Math.floor(Math.random() * remainingHellos.current.length)
+    const [hello] = remainingHellos.current.splice(index, 1)
+    setHello(hello ?? hellos[2]!)
+    console.log(remainingHellos.current)
+  }
+
   useEffect(() => {
-    setHello(hellos[Math.floor(Math.random() * hellos.length)]!)
-    const interval = setInterval(
-      () => setHello(hellos[Math.floor(Math.random() * hellos.length)]!),
-      5 * 1000,
-    )
+    pickHello()
+    const interval = setInterval(pickHello, 5 * 1000)
     return () => clearInterval(interval)
   }, [])
   /* eslint-enable @typescript-eslint/no-non-null-assertion */
